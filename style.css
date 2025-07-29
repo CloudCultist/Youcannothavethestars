@@ -45,3 +45,7 @@ footer {
   padding-top: 2rem;
   border-top: 1px solid #ccc;
 }
+
+ul li {
+  margin-bottom: 1.5rem; /* adds space below each list item */
+}
