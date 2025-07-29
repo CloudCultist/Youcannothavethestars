@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eddie Liu's Apocalypse in the Multiverse Series – You Cannot Have the Stars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="glossary.html">Glossary</a> |
+    <a href="characters.html">Characters</a> |
+    <a href="articles.html">Articles</a> |
+    <a href="op-eds.html">Op-Eds</a> |
+    <a href="lectures.html">University Lectures</a> |
+    <a href="short stories.html">Short Stories</a> |
+    <strong>Eddie Liu's <em>Apocalypse in the Multiverse</em> Series</strong>
+  </nav>
+
+  <main>
+    <h1>Eddie Liu's <em>Apocalypse in the Multiverse</em> Series</h1>
+    <p>This series explores alternate timelines and catastrophic convergences through the eyes of Eddie Liu, a key figure in <em>You Cannot Have the Stars</em>. Each story in this series offers a glimpse into a universe on the edge of annihilation—or salvation.</p>
+
+    <ul>
+      <!-- Example entry -->
+      <!--
+      <li>
+        <a href="multiverse/story-1.html"><strong>Through Fire and Ruin</strong></a><br>
+        <em>Published by Earth-X Archives, July 2033</em><br>
+        Eddie Liu faces an alternate version of himself who destroyed an entire world. Can he stop the same fate from befalling his own?
+      </li>
+      -->
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 You Cannot Have the Stars. All content is fictional and for storytelling purposes only.</p>
+  </footer>
+</body>
+</html>
