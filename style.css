@@ -47,5 +47,16 @@ footer {
 }
 
 ul li {
-  margin-bottom: 1.5rem; /* adds space below each list item */
+  margin-bottom: 1.5rem;
+}
+
+/* Navigation styling */
+nav span {
+  margin: 0 0.75rem;
+}
+
+nav a,
+nav strong {
+  text-decoration: none;
+  font-weight: bold;
 }
