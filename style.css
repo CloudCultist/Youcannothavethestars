@@ -3,8 +3,8 @@
 
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0b1a2b, #00162e);
-  color: #ddd;
+  background-color: #000000; /* Pure black background */
+  color: #3399ff;            /* Bright blue text for main content */
   margin: 0;
   padding: 2rem;
   line-height: 1.6;
@@ -14,24 +14,23 @@ body {
 }
 
 h1, h2, h3 {
-  color: #00aaff; /* Bright cyan for headers */
+  color: #00aaff; /* Slightly brighter cyan for headers */
   margin-top: 2rem;
   font-weight: 600;
 }
 
 /* Navigation styling */
 nav {
-  background-color: #07182e;
-  border-bottom: 1px solid #004c99;
+  background-color: #111111; /* Very dark gray for nav background */
+  border-bottom: 1px solid #003366;
   padding: 1rem;
   margin-bottom: 2rem;
   text-align: center;
   font-size: 0.95rem;
-  user-select: none;
 }
 
 nav a {
-  color: #ffaa00; /* Amber for nav links */
+  color: #3399ff;   /* Same blue as body text */
   margin: 0 1rem;
   font-weight: 700;
   text-decoration: none;
@@ -39,14 +38,13 @@ nav a {
 }
 
 nav a:hover {
-  color: #00aaff;
+  color: #66ccff; /* lighter blue on hover */
   text-decoration: underline;
 }
 
 /* Current page highlight */
-nav strong,
-nav strong.active {
-  color: #00aaff;
+nav strong, nav strong.active {
+  color: #ffcc00; /* Bright amber/yellow for current page */
   font-weight: 700;
   font-size: 1rem;
 }
@@ -54,17 +52,17 @@ nav strong.active {
 /* Footer styling */
 footer {
   text-align: center;
-  color: #999;
+  color: #666666; /* softer gray */
   font-size: 0.9rem;
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #004c99;
+  border-top: 1px solid #003366;
 }
 
 /* Lists */
 ul li {
   margin-bottom: 1.5rem;
-  color: #ccc;
+  color: #66b2ff; /* lighter blue for list text */
 }
 
 /* Definition lists */
@@ -79,27 +77,27 @@ dt {
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1.1rem;
-  color: #ffaa00; /* Amber for character names */
+  color: #ffcc00; /* Amber for character names */
 }
 
 dd {
   margin-left: 1.5rem;
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  color: #bbb;
+  color: #99ccff; /* light blue for descriptions */
   font-style: italic;
 }
 
-/* Character list classes for more semantic control */
+/* Character list classes */
 .char-name {
-  color: #ffaa00; /* Amber */
+  color: #ffcc00; /* Amber */
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1.1rem;
 }
 
 .char-desc {
-  color: #bbb; /* Light gray */
+  color: #99ccff; /* Light blue */
   font-style: italic;
   margin-left: 1.5rem;
   margin-bottom: 1rem;
@@ -107,13 +105,13 @@ dd {
 
 /* Links inside main content */
 a {
-  color: #00aaff;
+  color: #3399ff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ffaa00;
+  color: #ffcc00;
   text-decoration: underline;
 }
 
