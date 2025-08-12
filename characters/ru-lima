@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ru-Lima Characters – You Cannot Have the Stars</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../about.html">About</a> |
+    <a href="../glossary.html">Glossary</a> |
+    <a href="../characters.html">Characters</a> |
+    <a href="../articles.html">Articles</a> |
+    <a href="../op-eds.html">Op-Eds</a> |
+    <a href="../lectures.html">University Lectures</a> |
+    <a href="../multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
+  </nav>
+
+  <main>
+    <h1>Ru-Lima Characters</h1>
+    <dl>
+      <dt class="char-name">Arith-Lu</dt>
+      <dd class="char-desc">Acting Ambassador to humanity</dd>
+
+      <dt class="char-name">Noru-Sel</dt>
+      <dd class="char-desc">Ru-Lima pilot</dd>
+
+      <dt class="char-name">Rol-Yung</dt>
+      <dd class="char-desc">Contact between humans and Ru-Lima</dd>
+
+      <dt class="char-name">Tru-Urth</dt>
+      <dd class="char-desc">Ambassador to humanity</dd>
+
+      <dt class="char-name">Yin-Orp</dt>
+      <dd class="char-desc">Ru-Lima representative on the island</dd>
+
+      <dt class="char-name">Yix-Kloth</dt>
+      <dd class="char-desc">Schedule writer for human/Ru-Lima meetings</dd>
+    </dl>
+  </main>
+</body>
+</html>
