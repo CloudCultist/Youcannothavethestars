@@ -6,17 +6,41 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <nav>
-    <a href="../index.html">Home</a> |
-    <a href="../about.html">About</a> |
-    <a href="../glossary.html">Glossary</a> |
-    <a href="../characters.html">Characters</a> |
-    <a href="../articles.html">Articles</a> |
-    <a href="../op-eds.html">Op-Eds</a> |
-    <a href="../lectures.html">University Lectures</a> |
-    <a href="../multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
-  </nav>
+  <!-- Sub-navigation for character categories -->
+<nav class="character-subnav">
+  <ul>
+    <li><a href="main-characters.html">Main Characters</a></li>
+    <li><a href="secondary-characters.html">Secondary Characters</a></li>
+    <li><a href="supporting-characters.html">Supporting Characters</a></li>
+    <li><a href="alien-characters.html">Alien Characters</a></li>
+    <li><a href="characters.html">All Characters Overview</a></li>
+  </ul>
+</nav>
 
+<style>
+  /* Styling for character sub-navigation */
+  .character-subnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    background-color: #222;
+    padding: 0.5em;
+    border-radius: 6px;
+  }
+
+  .character-subnav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .character-subnav a:hover {
+    text-decoration: underline;
+  }
+</style>
   <main>
     <h1>Main Characters</h1>
     <dl>
