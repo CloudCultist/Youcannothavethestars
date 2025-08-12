@@ -1,370 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>You Cannot Have the Stars — Chapter 1</title>
-
-  <!-- site-wide stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- local styles for the "open book / right page" layout -->
-  <style>
-    /* Page-level font override for a book-like feel */
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap');
-
-    :root{
-      --page-width: 880px;      /* total visible book width */
-      --gutter: 40px;          /* visible sliver of left page */
-      --page-padding: 48px;
-      --paper: #f9f6ef;
-      --paper-accent: #efe9d9;
-      --text: #111;
-      --muted: #555;
-    }
-
-    body {
-      margin: 0;
-      background: linear-gradient(180deg,#0b0b0d 0%, #0d0d10 100%); /* dark backdrop */
-      color: var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-family: "Merriweather", Georgia, "Times New Roman", serif;
-      padding: 3rem 1rem;
-      display:flex;
-      justify-content:center;
-    }
-
-    /* center the book area */
-    .book-wrap {
-      width: min(100%, calc(var(--page-width)));
-      display:flex;
-      align-items:stretch;
-      justify-content:center;
-      gap: 0;
-      box-sizing: border-box;
-    }
-
-    /* left page is visible only as a narrow sliver */
-    .page-left {
-      width: var(--gutter);
-      background: linear-gradient(180deg, var(--paper-accent), var(--paper));
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-      transform-origin: left center;
-      border-right: 1px solid rgba(0,0,0,0.06);
-      position: relative;
-      min-height: 80vh;
-    }
-
-    /* right page (main readable area) */
-    .page-right {
-      flex: 1;
-      background: linear-gradient(180deg, var(--paper), #fff);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.65);
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
-      padding: var(--page-padding);
-      min-height: 80vh;
-      box-sizing: border-box;
-      position: relative;
-      overflow: auto;
-    }
-
-    /* page number centered near top */
-    .page-number {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 18px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
-    /* left-side date that you wanted bold */
-    .chapter-date {
-      position: absolute;
-      left: calc(-1 * var(--gutter) - 24px); /* places it visually on the left sliver */
-      top: 86px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--muted);
-      writing-mode: horizontal-tb;
-      transform: rotate(0deg);
-      white-space: nowrap;
-    }
-
-    /* content styling (book-like) */
-    .chapter {
-      max-width: 54ch; /* measure for comfortable reading */
-      margin: 5.2rem auto 2rem auto;
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: var(--text);
-    }
-
-    .chapter p {
-      margin: 0 0 1.05rem 0;
-      text-indent: 2.4rem; /* paragraph indentation like a printed book */
-    }
-
-    /* scene break */
-    .divider {
-      margin: 1.4rem 0 1.4rem 0;
-      text-align: center;
-      color: var(--muted);
-      font-style: normal;
-    }
-
-    /* small device tweaks */
-    @media (max-width: 900px) {
-      .book-wrap {
-        padding: 0 1rem;
-        width: 100%;
-      }
+<section class="book-section">
+  <h2>Chapter 1</h2>
+  <div class="book-page">
+    <h3 style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; color: #8b7d5c;">1</h3>
+    <p><strong>April 10, 2032</strong></p>
 
-      :root { --page-width: 720px; --gutter: 26px; --page-padding: 30px; }
-      .chapter { max-width: 60ch; font-size: 1rem; line-height: 1.6; margin-top:4.5rem; }
-      .page-right { min-height: 72vh; padding: 28px; }
-      .page-number { top: 12px; font-size: 1rem; }
-      .chapter-date { left: calc(-1 * var(--gutter) - 16px); top: 72px; font-size: 0.9rem; }
-    }
+    <p>With a thumbs-up and a smile, the White House broadcast director signaled to President Alvin Turner that the camera and microphone were off, and that the annual memorial for President Eugene Debs had gone smoothly. Turner nodded in return but said nothing as the Oval Office filled with the sounds of the recording equipment being removed. There was the squeak of wheels as the camera was pushed out, the hard snaps as the teleprompter was broken down, and the three clicks as the mic stand was lowered. Then the film crew was gone, the door closing softly behind them.</p>
 
-    /* make the chapter text preserve single quotes and long dashes nicely */
-    .chapter p :where(strong, em) { font-family:inherit; }
+    <p>More than a century after his assassination on April 10, 1923, the leading voice of Debs’s party continued to mark the occasion with a solemn national address. The only prop ever used, and always featured prominently in the broadcast, was a framed copy of the New York American from that day, its headline screaming across the top in bold type: “PRESIDENT DEBS FELLED BY ASSASSIN’S BULLET.” Even now, the stark black lettering remained etched in the country’s memory as one of the most recognizable front pages in American history.</p>
 
-    /* small visual polish for headings inside page */
-    .chapter strong.heading {
-      display:block;
-      margin: 0 0 0.6rem 0;
-      font-weight:700;
-      font-size:1.05rem;
-      color: #111;
-    }
+    <p>The president took a few quiet minutes to read the full front-page story, marveling at how little had been known when the special edition hit the streets just hours after the shooting. There was no mention of the Businessmen’s Plot, no name for the assassin, no reference to the hundreds of candlelight vigils held across the country that night. Even Debs’s death hadn’t been confirmed when the presses rolled, and yet, that bold headline had already become legend.</p>
 
-    /* ensure nav links remain readable against dark background */
-    nav {
-      margin-bottom: 1.25rem;
-      text-align:center;
-    }
+    <p>As horrifying as his assassination had been, it became the foundation for his party’s rise to national power. At the time, few believed Debs’s improbable election would amount to more than a single term, an anomaly before the country reverted to the status quo and Debs became a footnote in American history.</p>
 
-    nav a, nav strong {
-      color: #cfe8ff;
-      text-decoration: none;
-      font-weight: 700;
-      margin: 0 .45rem;
-    }
+    <p>How far things have come, President Turner thought, setting the framed newspaper article gently on the desk.</p>
 
-    /* small restoration if your global stylesheet makes nav look odd */
-    nav a:hover { text-decoration: underline; color: #fff; }
+    <p>As soon as he turned back around, his mind snapped back to the primaries unfolding that very day in South Carolina and Nevada. The memorial broadcast had been a welcome distraction, but the reprieve was short-lived. Unconsciously, he began clicking his fingernails against the desk as the anxiety of the season returned in full.</p>
 
-  </style>
-</head>
+    <p>Although eligible to run for a third term, Turner had chosen not to. No one who had ever tried had succeeded, and over time, it had become an unspoken rule, two terms was the maximum, dignity preserved.</p>
 
-<body>
-  <!-- main navigation (your requested nav to include on every page) -->
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="novel.html">Full Novel</a> |
-    <a href="glossary.html">Glossary</a> |
-    <a href="characters.html">Characters</a> |
-    <a href="articles.html">Articles</a> |
-    <a href="lectures.html">University Lectures</a> |
-    <a href="multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a> |
-  </nav>
+    <p>There was no rule, however, against trying to shape what came next, and like most who had served before him, he had encouraged his vice president to run and then officially endorsed him. Chad Hamilton was a good man and, although not as strong towards labor as Turner had been, he could be trusted to maintain the status quo.</p>
 
-  <div class="book-wrap" role="main" aria-labelledby="chapter-title">
-    <!-- narrow left sliver (part of the left page) -->
-    <aside class="page-left" aria-hidden="true">
-      <!-- intentionally mostly decorative -->
-    </aside>
+    <p>Yet even with the endorsement of a popular president, Hamilton was struggling. Senator Whitney Blake of Wisconsin had spent years as a passionate champion of labor, and millions of Americans loved him, inside and outside of his home state. Hamilton, for all his experience, seemed gray by comparison.</p>
 
-    <!-- right page (main readable area) -->
-    <article class="page-right">
-      <div class="page-number" aria-hidden="true">1</div>
-      <div class="chapter-date">**April 10, 2032**</div>
+    <p>Across the aisle, the Democratic front-runner was Governor Cameron Mendiola of Guam, the first ever nominee of any party from that state. The Republican candidate, meanwhile, was an unknown politician named Jacob Miller, a popular mayor from windswept Laramie, Wyoming. As was normal for the Republican presidential nominee, Miller was lagging far behind, barely registering in the polls. Like nearly every election for the last century, the real contest was between the Socialists and the Democrats.</p>
 
-      <div class="chapter" id="chapter-title">
-        <p>With a thumbs-up and a smile, the White House broadcast director signaled to President Alvin Turner that the camera and microphone were off, and that the annual memorial for President Eugene Debs had gone smoothly. Turner nodded in return but said nothing as the Oval Office filled with the sounds of the recording equipment being removed. There was the squeak of wheels as the camera was pushed out, the hard snaps as the teleprompter was broken down, and the three clicks as the mic stand was lowered. Then the film crew was gone, the door closing softly behind them.</p>
+    <p>Sighing, the President looked out the window, rain streaking the glass. He had no idea how long he'd been sitting there, lost in thoughts of legacy and the strange quiet at the end of a presidency while the clock on the mantle ticked the seconds away. Soon, the country would belong to a new, younger generation of politicians, whether they be led by Hamilton, Blake, or Mendiola, none out of their fifties and all with their own visions of the future, each eager to serve the country and leave it a little better than they had found it.</p>
 
-        <p>More than a century after his assassination on April 10, 1923, the leading voice of Debs’s party continued to mark the occasion with a solemn national address. The only prop ever used, and always featured prominently in the broadcast, was a framed copy of the New York American from that day, its headline screaming across the top in bold type: “PRESIDENT DEBS FELLED BY ASSASSIN’S BULLET.” Even now, the stark black lettering remained etched in the country’s memory as one of the most recognizable front pages in American history.</p>
+    <p>Turner's reverie broke as the door to the Oval Office opened and two Secret Service agents entered his office, moving with that clipped, urgent stride he'd come to recognize. His Secretary of State, Jessica Baldwin, followed close behind, a lock of hair falling over her brow, eyes sharp with worry.</p>
 
-        <p>The president took a few quiet minutes to read the full front-page story, marveling at how little had been known when the special edition hit the streets just hours after the shooting. There was no mention of the Businessmen’s Plot, no name for the assassin, no reference to the hundreds of candlelight vigils held across the country that night. Even Debs’s death hadn’t been confirmed when the presses rolled, and yet, that bold headline had already become legend.</p>
+    <p>The president rose as one agent spoke. "Sir, we have a situation. Please come with us." He could hear the urgency in their voices and he obeyed without question or complaint.</p>
 
-        <p>As horrifying as his assassination had been, it became the foundation for his party’s rise to national power. At the time, few believed Debs’s improbable election would amount to more than a single term, an anomaly before the country reverted to the status quo and Debs became a footnote in American history.</p>
+    <p>With a glance at Baldwin, Turner stepped between the agents, his heart beating a little harder. Jessica wasted no time. "Alvin, two minutes ago every device in the White House and, we think, the entire District, was hijacked and began counting down from sixty minutes."</p>
 
-        <p>How far things have come, President Turner thought, setting the framed newspaper article gently on the desk.</p>
+    <p>He blinked, more stunned by the scale than the concept. "Every device?"</p>
 
-        <p>As soon as he turned back around, his mind snapped back to the primaries unfolding that very day in South Carolina and Nevada. The memorial broadcast had been a welcome distraction, but the reprieve was short-lived. Unconsciously, he began clicking his fingernails against the desk as the anxiety of the season returned in full.</p>
+    <p>Baldwin touched her temple, activating the MindBeam nestled just beneath her skin. The back of her hand began to glow, green numbers ticking down.</p>
 
-        <p>Although eligible to run for a third term, Turner had chosen not to. No one who had ever tried had succeeded, and over time, it had become an unspoken rule, two terms was the maximum, dignity preserved.</p>
+    <p>57:44.</p>
+    <p>57:43.</p>
+    <p>57:42.</p>
 
-        <p>There was no rule, however, against trying to shape what came next, and like most who had served before him, he had encouraged his vice president to run and then officially endorsed him. Chad Hamilton was a good man and, although not as strong towards labor as Turner had been, he could be trusted to maintain the status quo.</p>
+    <p>Without breaking stride, one of the agents said, "Sir, we don't know what the numbers are counting down to. This could be anything from a prank to an imminent attack or another nation testing our defenses."</p>
 
-        <p>Yet even with the endorsement of a popular president, Hamilton was struggling. Senator Whitney Blake of Wisconsin had spent years as a passionate champion of labor, and millions of Americans loved him, inside and outside of his home state. Hamilton, for all his experience, seemed gray by comparison.</p>
+    <p>As the president and secretary of state were escorted through the halls of the White House, they passed several White House staff clustered in anxious groups, quietly discussing the disturbing turn of events. From an unused corner, Democratic President Richard Nixon's dusty old stereo, untouched for decades, now emitted a cold, inhuman voice.</p>
 
-        <p>Across the aisle, the Democratic front-runner was Governor Cameron Mendiola of Guam, the first ever nominee of any party from that state. The Republican candidate, meanwhile, was an unknown politician named Jacob Miller, a popular mayor from windswept Laramie, Wyoming. As was normal for the Republican presidential nominee, Miller was lagging far behind, barely registering in the polls. Like nearly every election for the last century, the real contest was between the Socialists and the Democrats.</p>
+    <p>"Fifty-one, thirty-six. Fifty-one, thirty-five. Fifty-one, thirty-four."</p>
 
-        <p>Sighing, the President looked out the window, rain streaking the glass. He had no idea how long he'd been sitting there, lost in thoughts of legacy and the strange quiet at the end of a presidency while the clock on the mantle ticked the seconds away. Soon, the country would belong to a new, younger generation of politicians, whether they be led by Hamilton, Blake, or Mendiola, none out of their fifties and all with their own visions of the future, each eager to serve the country and leave it a little better than they had found it.</p>
+    <p>A chill ran through Turner's spine. The sound of the countdown - a mechanical, utterly indifferent voice - was even more unsettling than the green numbers glowing on Baldwin's hand.</p>
 
-        <p>Turner's reverie broke as the door to the Oval Office opened and two Secret Service agents entered his office, moving with that clipped, urgent stride he'd come to recognize. His Secretary of State, Jessica Baldwin, followed close behind, a lock of hair falling over her brow, eyes sharp with worry.</p>
+    <p>He turned to Jessica. "Can you hear the countdown in your head, through your MindBeam?"</p>
 
-        <p>The president rose as one agent spoke. "Sir, we have a situation. Please come with us." He could hear the urgency in their voices and he obeyed without question or complaint.</p>
+    <p>She nodded. "Yes, sir. But I was able to shut it off. Thank gods for small mercies."</p>
 
-        <p>With a glance at Baldwin, Turner stepped between the agents, his heart beating a little harder. Jessica wasted no time. "Alvin, two minutes ago every device in the White House and, we think, the entire District, was hijacked and began counting down from sixty minutes."</p>
+    <p>Turner frowned. He had never trusted the MindBeam and was once again vindicated in his decision to refuse one when it first hit the market. The old-fashioned man had been stubborn about letting anything digital into his skull, worried that despite all assurances to the contrary, it could be hacked.</p>
 
-        <p>He blinked, more stunned by the scale than the concept. "Every device?"</p>
+    <p>As if reading his mind, Baldwin muttered, "I'll be sending Orchid Group a long letter about their 'hack-proof' device."</p>
 
-        <p>Baldwin touched her temple, activating the MindBeam nestled just beneath her skin. The back of her hand began to glow, green numbers ticking down.</p>
+    <p>Despite his distrust of the technology, Turner found himself saying, "The MindBeam's never been compromised before. Whoever did this is either very rich, very intelligent, or both."</p>
 
-        <p>57:44. <br> 57:43. <br> 57:42.</p>
+    <p>They kept up a hurried, uneasy conversation as they reached a small room in the east end of the White House. Once inside, they walked to the far wall where one of the agents pressed a small indentation embedded in a tall brown bookcase. Now activated, a panel slid open, revealing a hidden security array complete with a keyhole, number pad, retina and fingerprint scanner.</p>
 
-        <p>Without breaking stride, one of the agents said, "Sir, we don't know what the numbers are counting down to. This could be anything from a prank to an imminent attack or another nation testing our defenses."</p>
+    <p>Several decades ago, because of rising tensions with a large bloc of anti-socialist nations, a private, secure facility had been built underneath the East Wing of the White House. The exact location was confidential and very few people inside or outside of the executive branch even knew about it.</p>
 
-        <div class="divider">----------</div>
+    <p>Once the security panel was exposed, Turner fished out his key and inserted it, punched his code, pressed his thumb, and leaned in for the retinal scan. After he had gone through the entire process, the bookcase moved, revealing a steel staircase spiraling down into darkness.</p>
 
-        <!-- (continued...) - keep adding the rest of the chapter content here as needed -->
-        <p>As the president and secretary of state were escorted through the halls of the White House, they passed several White House staff clustered in anxious groups, quietly discussing the disturbing turn of events. From an unused corner, Democratic President Richard Nixon's dusty old stereo, untouched for decades, now emitted a cold, inhuman voice: "Fifty-one, thirty-six. Fifty-one, thirty-five. Fifty-one, thirty-four."</p>
+    <p>Stepping forward, one of the Secret Service agents led the way, overhead lights coming on as the group began their descent. At the bottom, an elevator waited, its brushed metal doors gleaming. The four of them piled in and, once the doors closed, descended even deeper underground, fifteen floors below the White House. Despite feeling more secure than he had above, that emotionless, robotic voice echoed in Turner's mind, counting down to something unknown. For the first time, he was grateful his wife and sons were in South Carolina with Hamilton and the Second Lady, far from whatever was coming.</p>
 
-        <p>A chill ran through Turner's spine. The sound of the countdown — a mechanical, utterly indifferent voice — was even more unsettling than the green numbers glowing on Baldwin's hand.</p>
+    <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ccc;">
 
-        <p>He turned to Jessica. "Can you hear the countdown in your head, through your MindBeam?"</p>
+    <p>Over the course of the next forty-five minutes, Turner and Baldwin were joined by several of his cabinet appointees, including the Secretary of Defense, Secretary of Domestic Security and the Vice Chairman of the Joint Chiefs of Staff. There was even an Army colonel Turner had met once or twice. These were the only people who could make it to the White House on such short notice.</p>
 
-        <p>She nodded. "Yes, sir. But I was able to shut it off. Thank gods for small mercies."</p>
+    <p>The group was gathered around a long table in the conference room that took up a small portion of the vast underground complex, all eyes fixed on a massive television screen showing the same relentless countdown that had illuminated Baldwin's hand.</p>
 
-        <p>Turner frowned. He had never trusted the MindBeam and was once again vindicated in his decision to refuse one when it first hit the market. The old-fashioned man had been stubborn about letting anything digital into his skull, worried that despite all assurances to the contrary, it could be hacked.</p>
+    <p>11:52.</p>
+    <p>11:51.</p>
+    <p>11:50.</p>
 
-        <p>As if reading his mind, Baldwin muttered, "I'll be sending Orchid Group a long letter about their 'hack-proof' device."</p>
+    <p>The Vice Chairman, General Harrison Collins, face grim, held up the receiver of the phone that was in front of him. "The countdown's on every line, sir. Calls work, but when the line's open, you hear the numbers." He pressed the speaker button and the same lifeless voice from the old stereo filled the room.</p>
 
-        <p>Despite his distrust of the technology, Turner found himself saying, "The MindBeam's never been compromised before. Whoever did this is either very rich, very intelligent, or both."</p>
+    <p>"Eleven minutes, thirty-three. Eleven minutes, thirty-two. Eleven minutes, thirty-one."</p>
 
-        <p>They kept up a hurried, uneasy conversation as they reached a small room in the east end of the White House. Once inside, they walked to the far wall where one of the agents pressed a small indentation embedded in a tall brown bookcase. Now activated, a panel slid open, revealing a hidden security array complete with a keyhole, number pad, retina and fingerprint scanner.</p>
+    <p>Time crawled, the tension and uncertainty growing with each second it got closer to zero. Suddenly, a red phone on the far wall buzzed sharply, making President Turner jump. He looked around, grateful no one had noticed. General Collins, in response to the call, rose and crossed the room, lifting the receiver. He said nothing at first, only listened to the voice on the other end, his face still and unreadable. After a few moments he said, "understood," hung up and addressed the room. "We're escalating to DEFCON 3."</p>
 
-        <p>Several decades ago, because of rising tensions with a large bloc of anti-socialist nations, a private, secure facility had been built underneath the East Wing of the White House. The exact location was confidential and very few people inside or outside of the executive branch even knew about it.</p>
+    <p>A few people around the table stiffened but no one spoke, except Secretary Eric Parsons, who whispered one word, "Jesus."</p>
 
-        <p>Once the security panel was exposed, Turner fished out his key and inserted it, punched his code, pressed his thumb, and leaned in for the retinal scan. After he had gone through the entire process, the bookcase moved, revealing a steel staircase spiraling down into darkness.</p>
+    <p>Turner leaned forward. "Who's making the call?"</p>
 
-        <p>Stepping forward, one of the Secret Service agents led the way, overhead lights coming on as the group began their descent. At the bottom, an elevator waited, its brushed metal doors gleaming. The four of them piled in and, once the doors closed, descended even deeper underground, fifteen floors below the White House. Despite feeling more secure than he had above, that emotionless, robotic voice echoed in Turner's mind, counting down to something unknown. For the first time, he was grateful his wife and sons were in South Carolina with Hamilton and the Second Lady, far from whatever was coming.</p>
+    <p>"Joint Chiefs just confirmed it with STRATCOM and NORAD. No sign of a launch, but with this level of technological compromise, we’re not assuming anything. The entire Armed Forces are being prepped for rapid deployment and the Air Force is already on alert."</p>
 
-        <div class="divider">----------</div>
+    <p>Jessica Baldwin’s eyes narrowed. “So we’re treating this as a prelude to an attack?”</p>
 
-        <p>Over the course of the next forty-five minutes, Turner and Baldwin were joined by several of his cabinet appointees, including the Secretary of Defense, Secretary of Domestic Security and the Vice Chairman of the Joint Chiefs of Staff. There was even an Army colonel Turner had met once or twice. These were the only people who could make it to the White House on such short notice.</p>
+    <p>“No one's saying that yet,” Collins replied evenly. “But we’re done waiting around. Cyber Command is mobilizing. FAA’s been notified. Presidential communications are being hardened, and we’re locking down D.C. airspace." He turned to Turner. “Sir, per protocol, we recommend you prepare for possible relocation to another secure location. The White House is too well known.”</p>
 
-        <p>The group was gathered around a long table in the conference room that took up a small portion of the vast underground complex, all eyes fixed on a massive television screen showing the same relentless countdown that had illuminated Baldwin's hand.</p>
+    <p>Turner shook his head immediately. “Not until we know what we’re dealing with. I'm staying in this bunker until the countdown ends or someone gives me a reason to run.”</p>
 
-        <p>11:52. <br> 11:51. <br> 11:50.</p>
+    <p>Collins didn’t argue. He just nodded and went back to his seat, crossing his arms as the countdown ticked away on the screen.</p>
 
-        <p>The Vice Chairman, General Harrison Collins, face grim, held up the receiver of the phone that was in front of him. "The countdown's on every line, sir. Calls work, but when the line's open, you hear the numbers." He pressed the speaker button and the same lifeless voice from the old stereo filled the room.</p>
+    <p>When the countdown reached the last ten seconds, Turner's heart hammered, his hands gripping the table until his knuckles turned white. All he could hear was the blood rushing in his ears.</p>
 
-        <p>"Eleven minutes, thirty-three. Eleven minutes, thirty-two. Eleven minutes, thirty-one."</p>
+    <p>0:05.</p>
+    <p>0:04.</p>
+    <p>0:03.</p>
+    <p>0:02.</p>
+    <p>0:01.</p>
+    <p>0:00.</p>
 
-        <p>Time crawled, the tension and uncertainty growing with each second it got closer to zero. Suddenly, a red phone on the far wall buzzed sharply, making President Turner jump. He looked around, grateful no one had noticed. General Collins, in response to the call, rose and crossed the room, lifting the receiver. He said nothing at first, only listened to the voice on the other end, his face still and unreadable. After a few moments he said, "understood," hung up and addressed the room. "We're escalating to DEFCON 3."</p>
+    <p>The green numbers on the television vanished. The screen filled with a silent, slowly spinning Earth, bathed in blue and brown, serene and detached. There was no voice, no music, just the planet, alone in the dark.</p>
 
-        <p>A few people around the table stiffened but no one spoke, except Secretary Eric Parsons, who whispered one word, "Jesus."</p>
+    <p>After a few seconds of this, a voice, smooth and distinctly American, broke the silence. To Turner, it almost sounded like the clip was beginning somewhere in the middle of a sentence. "To believe we are alone in this vast universe simply reflects the arrogance we humans so often display."</p>
 
-        <p>Turner leaned forward. "Who's making the call?"</p>
+    <p>Eric Parsons, the Secretary of Domestic Security, whipped his head around. "Who is that? Does anyone recognize the voice?"</p>
 
-        <p>"Joint Chiefs just confirmed it with STRATCOM and NORAD. No sign of a launch, but with this level of technological compromise, we’re not assuming anything. The entire Armed Forces are being prepped for rapid deployment and the Air Force is already on alert."</p>
+    <p>Most everyone at the table ignored him, eyes glued to the spinning earth that took up nearly the entire television screen. Suddenly, the view panned outward, past Mars, Jupiter and the other known planets. Then another bright gas giant came into view for a fleeting second and disappeared. Turner sat up, but the planet had already vanished, the image rushing past the edge of the solar system.</p>
 
-        <p>Jessica Baldwin’s eyes narrowed. “So we’re treating this as a prelude to an attack?”</p>
+    <p>"What goddamn planet was that?" Baldwin said, her voice sharp with disbelief. Without turning around she continued, "Is this some kind of joke?"</p>
 
-        <p>“No one's saying that yet,” Collins replied evenly. “But we’re done waiting around. Cyber Command is mobilizing. FAA’s been notified. Presidential communications are being hardened, and we’re locking down D.C. airspace." He turned to Turner. “Sir, per protocol, we recommend you prepare for possible relocation to another secure location. The White House is too well known.”</p>
+    <p>The camera pulled further back, the entire Milky Way now visible, the sun a tiny orange speck at the end of one of the spiral arms. Finally, the image stopped when the whole galaxy filled the screen.</p>
 
-        <p>Turner shook his head immediately. “Not until we know what we’re dealing with. I'm staying in this bunker until the countdown ends or someone gives me a reason to run.”</p>
+    <p>A second voice, Russian, calm and thoughtful, spoke. "All the time I was up there, I never saw anything alien. But I still believe they exist. Much like one of the faithful pronouncing their faith in God, it seems to me to be the only logical position."</p>
 
-        <p>Collins didn’t argue. He just nodded and went back to his seat, crossing his arms as the countdown ticked away on the screen.</p>
+    <p>As he finished, star after star lit up orange, twenty-four in all, scattered across the galaxy.</p>
 
-        <div class="divider">----------</div>
+    <p>A third voice began to speak, softer than the others, with an uncanny cadence. "They're right. You are not alone."</p>
 
-        <p>When the countdown reached the last ten seconds, Turner's heart hammered, his hands gripping the table until his knuckles turned white. All he could hear was the blood rushing in his ears.</p>
+    <p>As the voice spoke, the Milky Way faded away, giving way to a being unlike anything Turner had ever imagined outside of a science fiction novel. Its skin was a pale, nearly translucent pink, and four eyes stared out from its face, two at the front, glowing green, and two set further back, glossy and black. Something in its gaze made his skin prickle, as if it could actually see him. There was nothing that resembled a nose, with the only other discernible feature on its face being a small slit-like orifice, which must have been a mouth. Turner noticed the "mouth" wasn't moving as the creature spoke.</p>
 
-        <p>0:05. <br> 0:04. <br> 0:03. <br> 0:02. <br> 0:01. <br> 0:00.</p>
+    <p>Silence held the room while everyone stared at the eerie creature, several with their mouths hanging open.</p>
 
-        <p>The green numbers on the television vanished. The screen filled with a silent, slowly spinning Earth, bathed in blue and brown, serene and detached. There was no voice, no music, just the planet, alone in the dark.</p>
+    <p>Although the creature's mouth didn't move, the voice came through clearly. "My name is Tru-Urth, and I am from a species that calls itself the Ru-Lima. We apologize for the theatrics but we only wanted to ensure you would listen. This is not a prank, though we are sure many around the world will understandably assume it is. We are real, and we mean you no harm. We cannot stress that enough."</p>
 
-        <!-- end excerpt for now; continue adding the rest of your chapter below -->
+    <p>General Collins shot a glance at Turner, his voice tight. "This has to be some kind of joke. It's absurd. Aliens don't exist."</p>
 
-  <p>After a few seconds of this, a voice, smooth and distinctly American, broke the silence. To Turner, it almost sounded like the clip was beginning somewhere in the middle of a sentence. "To believe we are alone in this vast universe simply reflects the arrogance we humans so often display."</p>
+    <p>No one replied, their attention staying firmly on the creature on the screen. The alien's face remained unreadable as it continued, "While we know that many of you will remain skeptical, we assure you, this is not a deception. We are one of several technologically advanced, sentient species in the galaxy. While we are aware you have already discovered simple microbial life on several moons orbiting planets around your own star, today, you have your answer on whether or not advanced life exists beyond your solar system. My race, along with several other sentient peoples, have spent thousands of years helping one another, trading with one another, and teaching one another."</p>
 
-  <p>Eric Parsons, the Secretary of Domestic Security, whipped his head around. "Who is that? Does anyone recognize the voice?"</p>
+    <p>Collins opened his mouth to say something, probably to express further disbelief, but nothing came out.</p>
 
-  <p>Most everyone at the table ignored him, eyes glued to the spinning earth that took up nearly the entire television screen. Suddenly, the view panned outward, past Mars, Jupiter and the other known planets. Then another bright gas giant came into view for a fleeting second and disappeared. Turner sat up, but the planet had already vanished, the image rushing past the edge of the solar system.</p>
+    <p>The Ru-Lima's continued to speak in that same, unnatural rhythm. "Even now, several of our vessels are traveling toward your world and, in a few of your months, we will reach your solar system. We sincerely hope that when we arrive, you will welcome us, not with fear, but with the same sense of curiosity and wonder that has driven your own people to look up at the stars. We are eager to meet you, to learn from you, and to share what we can. This moment is as extraordinary for us as it is for you."</p>
 
-  <p>"What goddamn planet was that?" Baldwin said, her voice sharp with disbelief. Without turning around she continued, "Is this some kind of joke?"</p>
+    <p>For several more minutes, the Ru-Lima spoke, reassuring, explaining, promising peace, until at last, the screen went dark.</p>
 
-  <p>The camera pulled further back, the entire Milky Way now visible, the sun a tiny orange speck at the end of one of the spiral arms. Finally, the image stopped when the whole galaxy filled the screen.</p>
+    <p>Eric Parsons found his voice first. "We don't actually believe this is real, right?" He made eye contact with the president, his face holding a look that clearly showed his skepticism.</p>
 
-  <p>A second voice, Russian, calm and thoughtful, spoke. "All the time I was up there, I never saw anything alien. But I still believe they exist. Much like one of the faithful pronouncing their faith in God, it seems to me to be the only logical position."</p>
+    <p>Turner shook his head slowly. "Eric, I can't say for certain. But you saw the scale, what they did. The power behind this is staggering. What else could explain it?"</p>
 
-  <p>As he finished, star after star lit up orange, twenty-four in all, scattered across the galaxy.</p>
+    <p>Parsons looked lost. Shaking his head, he said, "It's a prank. The Soviets, maybe the Chinese..." He trailed off, letting the thought finish itself.</p>
 
-  <p>A third voice began to speak, softer than the others, with an uncanny cadence. "They're right. You are not alone."</p>
+    <p>Jessica Baldwin broke in. "Mr. President, we can't jump to any conclusions. We can't know the size or scope of these, these," she stuttered, trying to remember what the alien called itself. "These, um, Lima broadcasts at this moment."</p>
 
-  <p>As the voice spoke, the Milky Way faded away, giving way to a being unlike anything Turner had ever imagined outside of a science fiction novel. Its skin was a pale, nearly translucent pink, and four eyes stared out from its face, two at the front, glowing green, and two set further back, glossy and black. Something in its gaze made his skin prickle, as if it could actually see him. There was nothing that resembled a nose, with the only other discernible feature on its face being a small slit-like orifice, which must have been a mouth. Turner noticed the "mouth" wasn't moving as the creature spoke.</p>
+    <p>"We may not know how far reaching they were but we know the people behind this are very powerful. They hacked MindBeam's, for gods sakes." Parsons argued.</p>
 
-  <p>Silence held the room while everyone stared at the eerie creature, several with their mouths hanging open.</p>
+    <p>Turner's gaze swept the room, and put his hand up before it kept going. He could see an argument was about to break out and that was the last thing they needed. "Listen, everyone," he said, "we all have work to do. We need to reach out to other world leaders, learn if this was local to the United States or international. But first, I'm going to call my wife." He leaned forward, picked up the phone in front of him, and dialed the number he knew by heart.</p>
 
-  <p>Although the creature's mouth didn't move, the voice came through clearly. "My name is Tru-Urth, and I am from a species that calls itself the Ru-Lima. We apologize for the theatrics but we only wanted to ensure you would listen. This is not a prank, though we are sure many around the world will understandably assume it is. We are real, and we mean you no harm. We cannot stress that enough."</p>
+    <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ccc;">
 
-  <p>General Collins shot a glance at Turner, his voice tight. "This has to be some kind of joke. It's absurd. Aliens don't exist."</p>
+    <p>Congresswoman Tabitha Bosanac found herself in the Oval Office, sitting directly across from President Turner. She tried to keep her composure and steady her nerves, thankful she wasn't the only person who had been summoned to the White House after the aliens had broadcast their message.</p>
 
-  <p>No one replied, their attention staying firmly on the creature on the screen. The alien's face remained unreadable as it continued, "While we know that many of you will remain skeptical, we assure you, this is not a deception. We are one of several technologically advanced, sentient species in the galaxy. While we are aware you have already discovered simple microbial life on several moons orbiting planets around your own star, today, you have your answer on whether or not advanced life exists beyond your solar system. My race, along with several other sentient peoples, have spent thousands of years helping one another, trading with one another, and teaching one another."</p>
+    <p>To the congresswoman's right, Senators Whitney Blake and Debra Harris, both key members of the Senate Science Committee, traded hushed remarks about the whirlwind events that had brought them there. On her left was one of her colleagues, Congressman Tomas Castro, the top Democrat on the House Space Technology Research Committee. Bosanac, as that committee's chair, realized it shouldn't have been a surprise that she had been swept out of her office and straight to the White House after the Ru-Lima broadcast.</p>
 
-  <p>Collins opened his mouth to say something, probably to express further disbelief, but nothing came out.</p>
+    <p>Around the room, Turner had assembled a small group of key officials which included Jessica Baldwin, Eric Parsons and Sebastian Adebayo, the Secretary of Science and Technology. There were also a handful of others present who might have something crucial to add. The director of NASA was on the phone as well, unable to be present in the capital.</p>
 
-  <p>The Ru-Lima's continued to speak in that same, unnatural rhythm. "Even now, several of our vessels are traveling toward your world and, in a few of your months, we will reach your solar system. We sincerely hope that when we arrive, you will welcome us, not with fear, but with the same sense of curiosity and wonder that has driven your own people to look up at the stars. We are eager to meet you, to learn from you, and to share what we can. This moment is as extraordinary for us as it is for you."</p>
+    <p>President Turner wasted no time getting started, skipping pleasantries to get straight to business. "Secretary Adebayo assures me there isn't a nation or group on the planet with the power to hijack every single electronic device, down to the old analog radios. That kind of technology just doesn't exist." He nodded to his Science and Technology Secretary and said, "Sebastian, please, tell them what you told me."</p>
 
-  <p>For several more minutes, the Ru-Lima spoke, reassuring, explaining, promising peace, until at last, the screen went dark.</p>
+    <p>While he was speaking, Secretary Adebayo looked around, meeting each person's eyes. As he looked from person to person, Tabitha thought his gaze lingered on her a little longer, though she might have imagined it.</p>
 
-  <p>Eric Parsons found his voice first. "We don't actually believe this is real, right?" He made eye contact with the president, his face holding a look that clearly showed his skepticism.</p>
+    <p>"Just as I told President Turner," Adebayo said, "the broadcast claimed to be extraterrestrial in origin and, frankly, I can't think of any other possible explanation." He looked at Tabitha one more time before turning back to the president, and Tabitha convinced herself she had read too much into his quick glance.</p>
 
-  <p>Turner shook his head slowly. "Eric, I can't say for certain. But you saw the scale, what they did. The power behind this is staggering. What else could explain it?"</p>
+    <p>When there was a small lull in the conversation, Senator Harris tried to speak, but Adebayo pressed on, either not noticing or deliberately ignoring her.</p>
 
-  <p>Parsons looked lost. Shaking his head, he said, "It's a prank. The Soviets, maybe the Chinese..." He trailed off, letting the thought finish itself.</p>
+    <p>"I would say this was a localized event, which would still be staggeringly improbable, but less, shall I say," he stopped, searching for a word, and then said, "inconceivable." Tabitha noticed him look at her once again, just for a split second, and then turn away.</p>
 
-  <p>Jessica Baldwin broke in. "Mr. President, we can't jump to any conclusions. We can't know the size or scope of these, these," she stuttered, trying to remember what the alien called itself. "These, um, Lima broadcasts at this moment."</p>
+    <p>Finally, after Adebayo was silent for a moment, Senator Harris managed to ask, "What about the two voices that were in the video? Do we know who they were?"</p>
 
-  <p>"We may not know how far reaching they were but we know the people behind this are very powerful. They hacked MindBeam's, for gods sakes." Parsons argued.</p>
+    <p>"Yes, we actually do," Secretary Parsons answered. He cleared his throat and said, "The American voice belonged to a former astronaut, Douglas Dunn, but he passed away some years ago. The Russian, who is actually still alive, is Cosmonaut Arkady Komarov."</p>
 
-  <p>Turner's gaze swept the room, and put his hand up before it kept going. He could see an argument was about to break out and that was the last thing they needed. "Listen, everyone," he said, "we all have work to do. We need to reach out to other world leaders, learn if this was local to the United States or international. But first, I'm going to call my wife." He leaned forward, picked up the phone in front of him, and dialed the number he knew by heart.</p>
+    <p>President Turner cut in. "I've already spoken to the Soviet Premier and he says Komarov denies any involvement with the broadcast, but they summoned him to Moscow anyway. After that, I requested he come here to D.C. for a few days, which Komarov accepted. When he arrives, I'll meet with him privately, then hold a press conference with him and the Soviet ambassador. For that, I'd like everyone in this room – " he leaned forward and said directly into the phone, which was on speaker – "including you, Director, standing behind us as we speak to the media."</p>
 
-  <hr>
+    <p>"Yes, sir, Mr. President," the NASA director said.</p>
 
-  <p>Congresswoman Tabitha Bosanac found herself in the Oval Office, sitting directly across from President Turner. She tried to keep her composure and steady her nerves, thankful she wasn't the only person who had been summoned to the White House after the aliens had broadcast their message.</p>
+    <p>President Turner looked up at Tabitha and she nodded, her pulse quickening. Just like that, she had been thrust onto the national stage. Even though she had served nearly five terms in the House, she had never been able to stand out from the pack, to differentiate herself. Now standing behind the president for this momentous occasion would take her career to an entirely new level.</p>
 
-  <p>To the congresswoman's right, Senators Whitney Blake and Debra Harris, both key members of the Senate Science Committee, traded hushed remarks about the whirlwind events that had brought them there. On her left was one of her colleagues, Congressman Tomas Castro, the top Democrat on the House Space Technology Research Committee. Bosanac, as that committee's chair, realized it shouldn't have been a surprise that she had been swept out of her office and straight to the White House after the Ru-Lima broadcast.</p>
-
-  <p>Around the room, Turner had assembled a small group of key officials which included Jessica Baldwin, Eric Parsons and Sebastian Adebayo, the Secretary of Science and Technology. There were also a handful of others present who might have something crucial to add. The director of NASA was on the phone as well, unable to be present in the capital.</p>
-
-  <p>President Turner wasted no time getting started, skipping pleasantries to get straight to business. "Secretary Adebayo assures me there isn't a nation or group on the planet with the power to hijack every single electronic device, down to the old analog radios. That kind of technology just doesn't exist." He nodded to his Science and Technology Secretary and said, "Sebastian, please, tell them what you told me."</p>
-
-  <p>While he was speaking, Secretary Adebayo looked around, meeting each person's eyes. As he looked from person to person, Tabitha thought his gaze lingered on her a little longer, though she might have imagined it.</p>
-
-  <p>"Just as I told President Turner," Adebayo said, "the broadcast claimed to be extraterrestrial in origin and, frankly, I can't think of any other possible explanation." He looked at Tabitha one more time before turning back to the president, and Tabitha convinced herself she had read too much into his quick glance.</p>
-
-  <p>When there was a small lull in the conversation, Senator Harris tried to speak, but Adebayo pressed on, either not noticing or deliberately ignoring her.</p>
-
-  <p>"I would say this was a localized event, which would still be staggeringly improbable, but less, shall I say," he stopped, searching for a word, and then said, "inconceivable." Tabitha noticed him look at her once again, just for a split second, and then turn away.</p>
-
-  <p>Finally, after Adebayo was silent for a moment, Senator Harris managed to ask, "What about the two voices that were in the video? Do we know who they were?"</p>
-
-  <p>"Yes, we actually do," Secretary Parsons answered. He cleared his throat and said, "The American voice belonged to a former astronaut, Douglas Dunn, but he passed away some years ago. The Russian, who is actually still alive, is Cosmonaut Arkady Komarov."</p>
-
-  <p>President Turner cut in. "I've already spoken to the Soviet Premier and he says Komarov denies any involvement with the broadcast, but they summoned him to Moscow anyway. After that, I requested he come here to D.C. for a few days, which Komarov accepted. When he arrives, I'll meet with him privately, then hold a press conference with him and the Soviet ambassador. For that, I'd like everyone in this room – " he leaned forward and said directly into the phone, which was on speaker – "including you, Director, standing behind us as we speak to the media."</p>
-
-  <p>"Yes, sir, Mr. President," the NASA director said.</p>
-
-  <p>President Turner looked up at Tabitha and she nodded, her pulse quickening. Just like that, she had been thrust onto the national stage. Even though she had served nearly five terms in the House, she had never been able to stand out from the pack, to differentiate herself. Now standing behind the president for this momentous occasion would take her career to an entirely new level.</p>
-
-  <p>With her mind distracted by this newfound importance, Tabitha had completely forgotten the glances Secretary Adebayo had been casting her way.</p>
-</div>
-
-      </div> <!-- .chapter -->
-    </article>
+    <p>With her mind distracted by this newfound importance, Tabitha had completely forgotten the glances Secretary Adebayo had been casting her way.</p>
   </div>
-</body>
-</html>
+</section>
+
