@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>You Cannot Have the Stars — Chapter 1</title>
 
+  <!-- site-wide stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- local styles for the "open book / right page" layout -->
+  <style>
+    /* Page-level font override for a book-like feel */
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap');
+
+    :root{
+      --page-width: 880px;      /* total visible book width */
+      --gutter: 40px;          /* visible sliver of left page */
+      --page-padding: 48px;
+      --paper: #f9f6ef;
+      --paper-accent: #efe9d9;
+      --text: #111;
+      --muted: #555;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg,#0b0b0d 0%, #0d0d10 100%); /* dark backdrop */
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-family: "Merriweather", Georgia, "Times New Roman", serif;
+      padding: 3rem 1rem;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* center the book area */
+    .book-wrap {
+      width: min(100%, calc(var(--page-width)));
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      gap: 0;
+      box-sizing: border-box;
+    }
+
+    /* left page is visible only as a narrow sliver */
+    .page-left {
+      width: var(--gutter);
+      background: linear-gradient(180deg, var(--paper-accent), var(--paper));
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+      transform-origin: left center;
+      border-right: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+      min-height: 80vh;
+    }
+
+    /* right page (main readable area) */
+    .page-right {
+      flex: 1;
+      background: linear-gradient(180deg, var(--paper), #fff);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.65);
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: var(--page-padding);
+      min-height: 80vh;
+      box-sizing: border-box;
+      position: relative;
+      overflow: auto;
+    }
+
+    /* page number centered near top */
+    .page-number {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 18px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* left-side date that you wanted bold */
+    .chapter-date {
+      position: absolute;
+      left: calc(-1 * var(--gutter) - 24px); /* places it visually on the left sliver */
+      top: 86px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--muted);
+      writing-mode: horizontal-tb;
+      transform: rotate(0deg);
+      white-space: nowrap;
+    }
+
+    /* content styling (book-like) */
+    .chapter {
+      max-width: 54ch; /* measure for comfortable reading */
+      margin: 5.2rem auto 2rem auto;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .chapter p {
+      margin: 0 0 1.05rem 0;
+      text-indent: 2.4rem; /* paragraph indentation like a printed book */
+    }
+
+    /* scene break */
+    .divider {
+      margin: 1.4rem 0 1.4rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    /* small device tweaks */
+    @media (max-width: 900px) {
+      .book-wrap {
+        padding: 0 1rem;
+        width: 100%;
+      }
+
+      :root { --page-width: 720px; --gutter: 26px; --page-padding: 30px; }
+      .chapter { max-width: 60ch; font-size: 1rem; line-height: 1.6; margin-top:4.5rem; }
+      .page-right { min-height: 72vh; padding: 28px; }
+      .page-number { top: 12px; font-size: 1rem; }
+      .chapter-date { left: calc(-1 * var(--gutter) - 16px); top: 72px; font-size: 0.9rem; }
+    }
+
+    /* make the chapter text preserve single quotes and long dashes nicely */
+    .chapter p :where(strong, em) { font-family:inherit; }
+
+    /* small visual polish for headings inside page */
+    .chapter strong.heading {
+      display:block;
+      margin: 0 0 0.6rem 0;
+      font-weight:700;
+      font-size:1.05rem;
+      color: #111;
+    }
+
+    /* ensure nav links remain readable against dark background */
+    nav {
+      margin-bottom: 1.25rem;
+      text-align:center;
+    }
+
+    nav a, nav strong {
+      color: #cfe8ff;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 .45rem;
+    }
+
+    /* small restoration if your global stylesheet makes nav look odd */
+    nav a:hover { text-decoration: underline; color: #fff; }
+
+  </style>
+</head>
+
+<body>
+  <!-- main navigation (your requested nav to include on every page) -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="novel.html">Full Novel</a> |
+    <a href="glossary.html">Glossary</a> |
+    <a href="characters.html">Characters</a> |
+    <a href="articles.html">Articles</a> |
+    <a href="lectures.html">University Lectures</a> |
+    <a href="multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a> |
+  </nav>
+
+  <div class="book-wrap" role="main" aria-labelledby="chapter-title">
+    <!-- narrow left sliver (part of the left page) -->
+    <aside class="page-left" aria-hidden="true">
+      <!-- intentionally mostly decorative -->
+    </aside>
+
+    <!-- right page (main readable area) -->
+    <article class="page-right">
+      <div class="page-number" aria-hidden="true">1</div>
+      <div class="chapter-date">**April 10, 2032**</div>
+
+      <div class="chapter" id="chapter-title">
+        <p>With a thumbs-up and a smile, the White House broadcast director signaled to President Alvin Turner that the camera and microphone were off, and that the annual memorial for President Eugene Debs had gone smoothly. Turner nodded in return but said nothing as the Oval Office filled with the sounds of the recording equipment being removed. There was the squeak of wheels as the camera was pushed out, the hard snaps as the teleprompter was broken down, and the three clicks as the mic stand was lowered. Then the film crew was gone, the door closing softly behind them.</p>
+
+        <p>More than a century after his assassination on April 10, 1923, the leading voice of Debs’s party continued to mark the occasion with a solemn national address. The only prop ever used, and always featured prominently in the broadcast, was a framed copy of the New York American from that day, its headline screaming across the top in bold type: “PRESIDENT DEBS FELLED BY ASSASSIN’S BULLET.” Even now, the stark black lettering remained etched in the country’s memory as one of the most recognizable front pages in American history.</p>
+
+        <p>The president took a few quiet minutes to read the full front-page story, marveling at how little had been known when the special edition hit the streets just hours after the shooting. There was no mention of the Businessmen’s Plot, no name for the assassin, no reference to the hundreds of candlelight vigils held across the country that night. Even Debs’s death hadn’t been confirmed when the presses rolled, and yet, that bold headline had already become legend.</p>
+
+        <p>As horrifying as his assassination had been, it became the foundation for his party’s rise to national power. At the time, few believed Debs’s improbable election would amount to more than a single term, an anomaly before the country reverted to the status quo and Debs became a footnote in American history.</p>
+
+        <p>How far things have come, President Turner thought, setting the framed newspaper article gently on the desk.</p>
+
+        <p>As soon as he turned back around, his mind snapped back to the primaries unfolding that very day in South Carolina and Nevada. The memorial broadcast had been a welcome distraction, but the reprieve was short-lived. Unconsciously, he began clicking his fingernails against the desk as the anxiety of the season returned in full.</p>
+
+        <p>Although eligible to run for a third term, Turner had chosen not to. No one who had ever tried had succeeded, and over time, it had become an unspoken rule, two terms was the maximum, dignity preserved.</p>
+
+        <p>There was no rule, however, against trying to shape what came next, and like most who had served before him, he had encouraged his vice president to run and then officially endorsed him. Chad Hamilton was a good man and, although not as strong towards labor as Turner had been, he could be trusted to maintain the status quo.</p>
+
+        <p>Yet even with the endorsement of a popular president, Hamilton was struggling. Senator Whitney Blake of Wisconsin had spent years as a passionate champion of labor, and millions of Americans loved him, inside and outside of his home state. Hamilton, for all his experience, seemed gray by comparison.</p>
+
+        <p>Across the aisle, the Democratic front-runner was Governor Cameron Mendiola of Guam, the first ever nominee of any party from that state. The Republican candidate, meanwhile, was an unknown politician named Jacob Miller, a popular mayor from windswept Laramie, Wyoming. As was normal for the Republican presidential nominee, Miller was lagging far behind, barely registering in the polls. Like nearly every election for the last century, the real contest was between the Socialists and the Democrats.</p>
+
+        <p>Sighing, the President looked out the window, rain streaking the glass. He had no idea how long he'd been sitting there, lost in thoughts of legacy and the strange quiet at the end of a presidency while the clock on the mantle ticked the seconds away. Soon, the country would belong to a new, younger generation of politicians, whether they be led by Hamilton, Blake, or Mendiola, none out of their fifties and all with their own visions of the future, each eager to serve the country and leave it a little better than they had found it.</p>
+
+        <p>Turner's reverie broke as the door to the Oval Office opened and two Secret Service agents entered his office, moving with that clipped, urgent stride he'd come to recognize. His Secretary of State, Jessica Baldwin, followed close behind, a lock of hair falling over her brow, eyes sharp with worry.</p>
+
+        <p>The president rose as one agent spoke. "Sir, we have a situation. Please come with us." He could hear the urgency in their voices and he obeyed without question or complaint.</p>
+
+        <p>With a glance at Baldwin, Turner stepped between the agents, his heart beating a little harder. Jessica wasted no time. "Alvin, two minutes ago every device in the White House and, we think, the entire District, was hijacked and began counting down from sixty minutes."</p>
+
+        <p>He blinked, more stunned by the scale than the concept. "Every device?"</p>
+
+        <p>Baldwin touched her temple, activating the MindBeam nestled just beneath her skin. The back of her hand began to glow, green numbers ticking down.</p>
+
+        <p>57:44. <br> 57:43. <br> 57:42.</p>
+
+        <p>Without breaking stride, one of the agents said, "Sir, we don't know what the numbers are counting down to. This could be anything from a prank to an imminent attack or another nation testing our defenses."</p>
+
+        <div class="divider">----------</div>
+
+        <!-- (continued...) - keep adding the rest of the chapter content here as needed -->
+        <p>As the president and secretary of state were escorted through the halls of the White House, they passed several White House staff clustered in anxious groups, quietly discussing the disturbing turn of events. From an unused corner, Democratic President Richard Nixon's dusty old stereo, untouched for decades, now emitted a cold, inhuman voice: "Fifty-one, thirty-six. Fifty-one, thirty-five. Fifty-one, thirty-four."</p>
+
+        <p>A chill ran through Turner's spine. The sound of the countdown — a mechanical, utterly indifferent voice — was even more unsettling than the green numbers glowing on Baldwin's hand.</p>
+
+        <p>He turned to Jessica. "Can you hear the countdown in your head, through your MindBeam?"</p>
+
+        <p>She nodded. "Yes, sir. But I was able to shut it off. Thank gods for small mercies."</p>
+
+        <p>Turner frowned. He had never trusted the MindBeam and was once again vindicated in his decision to refuse one when it first hit the market. The old-fashioned man had been stubborn about letting anything digital into his skull, worried that despite all assurances to the contrary, it could be hacked.</p>
+
+        <p>As if reading his mind, Baldwin muttered, "I'll be sending Orchid Group a long letter about their 'hack-proof' device."</p>
+
+        <p>Despite his distrust of the technology, Turner found himself saying, "The MindBeam's never been compromised before. Whoever did this is either very rich, very intelligent, or both."</p>
+
+        <p>They kept up a hurried, uneasy conversation as they reached a small room in the east end of the White House. Once inside, they walked to the far wall where one of the agents pressed a small indentation embedded in a tall brown bookcase. Now activated, a panel slid open, revealing a hidden security array complete with a keyhole, number pad, retina and fingerprint scanner.</p>
+
+        <p>Several decades ago, because of rising tensions with a large bloc of anti-socialist nations, a private, secure facility had been built underneath the East Wing of the White House. The exact location was confidential and very few people inside or outside of the executive branch even knew about it.</p>
+
+        <p>Once the security panel was exposed, Turner fished out his key and inserted it, punched his code, pressed his thumb, and leaned in for the retinal scan. After he had gone through the entire process, the bookcase moved, revealing a steel staircase spiraling down into darkness.</p>
+
+        <p>Stepping forward, one of the Secret Service agents led the way, overhead lights coming on as the group began their descent. At the bottom, an elevator waited, its brushed metal doors gleaming. The four of them piled in and, once the doors closed, descended even deeper underground, fifteen floors below the White House. Despite feeling more secure than he had above, that emotionless, robotic voice echoed in Turner's mind, counting down to something unknown. For the first time, he was grateful his wife and sons were in South Carolina with Hamilton and the Second Lady, far from whatever was coming.</p>
+
+        <div class="divider">----------</div>
+
+        <p>Over the course of the next forty-five minutes, Turner and Baldwin were joined by several of his cabinet appointees, including the Secretary of Defense, Secretary of Domestic Security and the Vice Chairman of the Joint Chiefs of Staff. There was even an Army colonel Turner had met once or twice. These were the only people who could make it to the White House on such short notice.</p>
+
+        <p>The group was gathered around a long table in the conference room that took up a small portion of the vast underground complex, all eyes fixed on a massive television screen showing the same relentless countdown that had illuminated Baldwin's hand.</p>
+
+        <p>11:52. <br> 11:51. <br> 11:50.</p>
+
+        <p>The Vice Chairman, General Harrison Collins, face grim, held up the receiver of the phone that was in front of him. "The countdown's on every line, sir. Calls work, but when the line's open, you hear the numbers." He pressed the speaker button and the same lifeless voice from the old stereo filled the room.</p>
+
+        <p>"Eleven minutes, thirty-three. Eleven minutes, thirty-two. Eleven minutes, thirty-one."</p>
+
+        <p>Time crawled, the tension and uncertainty growing with each second it got closer to zero. Suddenly, a red phone on the far wall buzzed sharply, making President Turner jump. He looked around, grateful no one had noticed. General Collins, in response to the call, rose and crossed the room, lifting the receiver. He said nothing at first, only listened to the voice on the other end, his face still and unreadable. After a few moments he said, "understood," hung up and addressed the room. "We're escalating to DEFCON 3."</p>
+
+        <p>A few people around the table stiffened but no one spoke, except Secretary Eric Parsons, who whispered one word, "Jesus."</p>
+
+        <p>Turner leaned forward. "Who's making the call?"</p>
+
+        <p>"Joint Chiefs just confirmed it with STRATCOM and NORAD. No sign of a launch, but with this level of technological compromise, we’re not assuming anything. The entire Armed Forces are being prepped for rapid deployment and the Air Force is already on alert."</p>
+
+        <p>Jessica Baldwin’s eyes narrowed. “So we’re treating this as a prelude to an attack?”</p>
+
+        <p>“No one's saying that yet,” Collins replied evenly. “But we’re done waiting around. Cyber Command is mobilizing. FAA’s been notified. Presidential communications are being hardened, and we’re locking down D.C. airspace." He turned to Turner. “Sir, per protocol, we recommend you prepare for possible relocation to another secure location. The White House is too well known.”</p>
+
+        <p>Turner shook his head immediately. “Not until we know what we’re dealing with. I'm staying in this bunker until the countdown ends or someone gives me a reason to run.”</p>
+
+        <p>Collins didn’t argue. He just nodded and went back to his seat, crossing his arms as the countdown ticked away on the screen.</p>
+
+        <div class="divider">----------</div>
+
+        <p>When the countdown reached the last ten seconds, Turner's heart hammered, his hands gripping the table until his knuckles turned white. All he could hear was the blood rushing in his ears.</p>
+
+        <p>0:05. <br> 0:04. <br> 0:03. <br> 0:02. <br> 0:01. <br> 0:00.</p>
+
+        <p>The green numbers on the television vanished. The screen filled with a silent, slowly spinning Earth, bathed in blue and brown, serene and detached. There was no voice, no music, just the planet, alone in the dark.</p>
+
+        <!-- end excerpt for now; continue adding the rest of your chapter below -->
+      </div> <!-- .chapter -->
+    </article>
+  </div>
+</body>
+</html>
