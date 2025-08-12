@@ -3,8 +3,8 @@
 
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9;
-  color: #222;
+  background: linear-gradient(135deg, #0b1a2b, #00162e);
+  color: #ddd;
   margin: 0;
   padding: 2rem;
   line-height: 1.6;
@@ -14,61 +14,64 @@ body {
 }
 
 h1, h2, h3 {
-  color: #2a2a2a;
+  color: #00aaff; /* Bright cyan for headers */
   margin-top: 2rem;
   font-weight: 600;
 }
 
-a {
-  color: #004c99;
+/* Navigation styling */
+nav {
+  background-color: #07182e;
+  border-bottom: 1px solid #004c99;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+nav a {
+  color: #ffaa00; /* Amber for nav links */
+  margin: 0 1rem;
+  font-weight: 700;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-a:hover {
+nav a:hover {
+  color: #00aaff;
   text-decoration: underline;
-  color: #003366;
 }
 
-nav {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 1rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-nav strong {
+/* Current page highlight */
+nav strong,
+nav strong.active {
+  color: #00aaff;
   font-weight: 700;
   font-size: 1rem;
-  color: #004c99;
 }
 
+/* Footer styling */
 footer {
   text-align: center;
-  color: #666;
+  color: #999;
   font-size: 0.9rem;
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #004c99;
 }
 
-/* List styling */
+/* Lists */
 ul li {
   margin-bottom: 1.5rem;
+  color: #ccc;
 }
 
-/* Definition lists styling */
+/* Definition lists */
 dl {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  border-left: 4px solid #004c99;
+  border-left: 4px solid #00aaff;
   padding-left: 1rem;
 }
 
@@ -76,55 +79,61 @@ dt {
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1.1rem;
-  color: #003366;
+  color: #ffaa00; /* Amber for character names */
 }
 
 dd {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  color: #444;
+  color: #bbb;
+  font-style: italic;
 }
 
-/* Responsive tweaks */
+/* Character list classes for more semantic control */
+.char-name {
+  color: #ffaa00; /* Amber */
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.char-desc {
+  color: #bbb; /* Light gray */
+  font-style: italic;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Links inside main content */
+a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffaa00;
+  text-decoration: underline;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   body {
     padding: 1rem;
     max-width: 100%;
   }
 
-  nav a {
+  nav a, nav strong {
     margin: 0 0.5rem;
     font-size: 0.9rem;
   }
 
-  dt {
+  dt, .char-name {
     font-size: 1rem;
   }
 
-  dd {
+  dd, .char-desc {
     font-size: 0.9rem;
   }
-}
-
-/* Header colors */
-h1, h2, h3 {
-  color: #00aaff; /* Bright cyan */
-  margin-top: 2rem;
-}
-
-/* Character names */
-.char-name {
-  color: #ffaa00; /* Warm amber */
-  font-weight: 700;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-}
-
-/* Character descriptions */
-.char-desc {
-  color: #cccccc; /* Light gray */
-  font-style: italic;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
 }
