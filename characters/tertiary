@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tertiary Characters – You Cannot Have the Stars</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../about.html">About</a> |
+    <a href="../glossary.html">Glossary</a> |
+    <a href="../characters.html">Characters</a> |
+    <a href="../articles.html">Articles</a> |
+    <a href="../op-eds.html">Op-Eds</a> |
+    <a href="../lectures.html">University Lectures</a> |
+    <a href="../multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
+  </nav>
+
+  <main>
+    <h1>Tertiary Characters</h1>
+    <dl>
+      <dt class="char-name">Veronica Oliveira de Almeida</dt>
+      <dd class="char-desc">Brazilian doctor working on illegal virus with Dr. Santos</dd>
+
+      <dt class="char-name">Adam Bergstrom</dt>
+      <dd class="char-desc">Doctor of Paleobiology; Best friend of Steve Webber; former military</dd>
+
+      <dt class="char-name">Harvey Franklin</dt>
+      <dd class="char-desc">Doctor of Marine geology</dd>
+
+      <dt class="char-name">Tara Hall</dt>
+      <dd class="char-desc">Timothy Hall's wife</dd>
+
+      <dt class="char-name">Collin Johnson</dt>
+      <dd class="char-desc">Scientist; twin brother of Ryan Johnson</dd>
+
+      <dt class="char-name">Ryan Johnson</dt>
+      <dd class="char-desc">Scientist; twin brother of Collin Johnson</dd>
+
+      <dt class="char-name">Melvin Salter</dt>
+      <dd class="char-desc">Head of Civilian Employees in Montana Compound</dd>
+
+      <dt class="char-name">Joao Baptista dos Santos</dt>
+      <dd class="char-desc">Brazilian doctor and head researcher working on illegal virus</dd>
+
+      <dt class="char-name">Terry and Teri</dt>
+      <dd class="char-desc">A young couple who are friends with Tabitha Bosanac</dd>
+
+      <dt class="char-name">Angus Todd</dt>
+      <dd class="char-desc">Speaker of the House of Representatives</dd>
+    </dl>
+  </main>
+</body>
+</html>
