@@ -106,3 +106,25 @@ dd {
     font-size: 0.9rem;
   }
 }
+
+/* Header colors */
+h1, h2, h3 {
+  color: #00aaff; /* Bright cyan */
+  margin-top: 2rem;
+}
+
+/* Character names */
+.char-name {
+  color: #ffaa00; /* Warm amber */
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Character descriptions */
+.char-desc {
+  color: #cccccc; /* Light gray */
+  font-style: italic;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
