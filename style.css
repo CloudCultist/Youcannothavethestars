@@ -3,33 +3,52 @@
 
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000000; /* Pure black background */
-  color: #3399ff;            /* Bright blue text for main content */
-  margin: 0 auto;
+  background-image: url('astronauts-cosmic-gaze-stockcake.jpg');
+  background-size: cover;        /* Cover entire viewport */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* Keeps image fixed on scroll */
+  color: #fff;                   /* White text for contrast */
+  margin: 0;
   padding: 2rem;
   line-height: 1.6;
   max-width: 800px;
-  font-size: 1rem;
+  position: relative;            /* Needed for overlay */
+  z-index: 0;
 }
 
+/* Dark overlay to improve text readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.55); /* Adjust opacity as needed */
+  z-index: -1;                      /* Behind content */
+  pointer-events: none;
+}
+
+/* Headers */
 h1, h2, h3 {
-  color: #00aaff; /* Slightly brighter cyan for headers */
+  color: #00aaff; /* Bright cyan */
   margin-top: 2rem;
   font-weight: 600;
 }
 
 /* Navigation styling */
 nav {
-  background-color: #111111; /* Very dark gray for nav background */
+  background-color: rgba(17, 17, 17, 0.85); /* Slightly transparent dark */
   border-bottom: 1px solid #003366;
   padding: 1rem;
   margin-bottom: 2rem;
   text-align: center;
   font-size: 0.95rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
-  color: #3399ff;   /* Same blue as body text */
+  color: #3399ff;   /* Blue links */
   margin: 0 1rem;
   font-weight: 700;
   text-decoration: none;
@@ -37,13 +56,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #66ccff; /* lighter blue on hover */
+  color: #66ccff;
   text-decoration: underline;
 }
 
-/* Current page highlight */
 nav strong, nav strong.active {
-  color: #ffcc00; /* Bright amber/yellow for current page */
+  color: #ffcc00; /* Amber highlight */
   font-weight: 700;
   font-size: 1rem;
 }
@@ -51,7 +69,7 @@ nav strong, nav strong.active {
 /* Footer styling */
 footer {
   text-align: center;
-  color: #666666; /* softer gray */
+  color: #aaa; /* Softer gray for readability */
   font-size: 0.9rem;
   margin-top: 4rem;
   padding-top: 2rem;
@@ -61,7 +79,7 @@ footer {
 /* Lists */
 ul li {
   margin-bottom: 1.5rem;
-  color: #66b2ff; /* lighter blue for list text */
+  color: #99ccff;
 }
 
 /* Definition lists */
@@ -76,27 +94,27 @@ dt {
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1.1rem;
-  color: #ffcc00; /* Amber for character names */
+  color: #ffcc00;
 }
 
 dd {
   margin-left: 1.5rem;
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  color: #99ccff; /* light blue for descriptions */
+  color: #99ccff;
   font-style: italic;
 }
 
 /* Character list classes */
 .char-name {
-  color: #ffcc00; /* Amber */
+  color: #ffcc00;
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1.1rem;
 }
 
 .char-desc {
-  color: #99ccff; /* Light blue */
+  color: #99ccff;
   font-style: italic;
   margin-left: 1.5rem;
   margin-bottom: 1rem;
@@ -120,7 +138,7 @@ a:hover {
 }
 
 .character-subnav ul {
-  list-style: none;       /* Removes bullet points */
+  list-style: none;
   padding: 0;
   margin: 1em 0;
   display: flex;
@@ -173,6 +191,7 @@ a:hover {
     gap: 0.5em;
   }
 }
+
 /* Newspaper style for historical articles */
 .newspaper-article {
   background: linear-gradient(to bottom, #fdf6e3 0%, #f0e9d2 100%);
@@ -230,6 +249,7 @@ a:hover {
     font-size: 1.8rem;
   }
 }
+
 /* Book page styling with subtle curved left edge and shadow */
 .book-section {
   margin-top: 3rem;
@@ -237,7 +257,7 @@ a:hover {
 
 .book-page {
   background-color: #f9f4e9; /* Cream background */
-  color: #2a2a2a;             /* Dark text for readability */
+  color: #2a2a2a;             /* Dark text */
   font-family: 'Georgia', 'Times New Roman', serif;
   padding: 2.5rem 3rem;
   max-width: 800px;
@@ -246,6 +266,7 @@ a:hover {
   border-radius: 0 8px 8px 0;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
   position: relative;
+  z-index: 1; /* Keep above the overlay */
 }
 
 /* Subtle curved left edge with an overlay */
@@ -260,7 +281,7 @@ a:hover {
   border-radius: 16px 0 0 16px;
   box-shadow: inset 2px 0 4px rgba(0,0,0,0.1);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Ensure links inside book page are distinct */
@@ -273,26 +294,3 @@ a:hover {
   color: #003355;
 }
 
-/* Make sure the nav stays at top, content scrolls below */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Override body background only for .book-page to keep black elsewhere */
-body.book-background {
-  background-color: #000000;
-}
-
-@media (max-width: 600px) {
-  .book-page {
-    padding: 1.5rem 1.8rem;
-    margin: 1.5rem 1rem;
-    font-size: 0.95rem;
-  }
-  .book-page::before {
-    width: 2rem;
-    border-radius: 12px 0 0 12px;
-  }
-}
