@@ -230,3 +230,69 @@ a:hover {
     font-size: 1.8rem;
   }
 }
+/* Book page styling with subtle curved left edge and shadow */
+.book-section {
+  margin-top: 3rem;
+}
+
+.book-page {
+  background-color: #f9f4e9; /* Cream background */
+  color: #2a2a2a;             /* Dark text for readability */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  padding: 2.5rem 3rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Subtle curved left edge with an overlay */
+.book-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 100%;
+  background: #f9f4e9;
+  border-radius: 16px 0 0 16px;
+  box-shadow: inset 2px 0 4px rgba(0,0,0,0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure links inside book page are distinct */
+.book-page a {
+  color: #006699;
+  text-decoration: underline;
+}
+
+.book-page a:hover {
+  color: #003355;
+}
+
+/* Make sure the nav stays at top, content scrolls below */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Override body background only for .book-page to keep black elsewhere */
+body.book-background {
+  background-color: #000000;
+}
+
+@media (max-width: 600px) {
+  .book-page {
+    padding: 1.5rem 1.8rem;
+    margin: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  .book-page::before {
+    width: 2rem;
+    border-radius: 12px 0 0 12px;
+  }
+}
