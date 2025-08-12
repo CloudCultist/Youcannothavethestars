@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minor or Unseen Characters – You Cannot Have the Stars</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../about.html">About</a> |
+    <a href="../glossary.html">Glossary</a> |
+    <a href="../characters.html">Characters</a> |
+    <a href="../articles.html">Articles</a> |
+    <a href="../op-eds.html">Op-Eds</a> |
+    <a href="../lectures.html">University Lectures</a> |
+    <a href="../multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
+  </nav>
+
+  <main>
+    <h1>Minor or Unseen Characters</h1>
+    <dl>
+      <dt class="char-name">Whitney Blake</dt>
+      <dd class="char-desc">Senator from Wisconsin; Socialist Candidate for President</dd>
+
+      <dt class="char-name">Tomas Castro</dt>
+      <dd class="char-desc">Democratic Congressman on Space Technology Research Committee</dd>
+
+      <dt class="char-name">Charles Chavez</dt>
+      <dd class="char-desc">Secretary of the Treasury; member of the Socialist Party</dd>
+
+      <dt class="char-name">Harrison Collins</dt>
+      <dd class="char-desc">Vice Chairman of the Joint Chiefs of Staff</dd>
+
+      <dt class="char-name">Stewart Guglielmin</dt>
+      <dd class="char-desc">Agent with the United States Secret Service</dd>
+
+      <dt class="char-name">Chad Hamilton</dt>
+      <dd class="char-desc">Vice President of the United States</dd>
+
+      <dt class="char-name">Debra Harris</dt>
+      <dd class="char-desc">Democratic Senator on the Senate Science Committee</dd>
+
+      <dt class="char-name">Andy Harrison</dt>
+      <dd class="char-desc">A fast-food restaurant manager</dd>
+
+      <dt class="char-name">Lola Hart</dt>
+      <dd class="char-desc">A promiscuous woman attracted to unknown musicians</dd>
+
+      <dt class="char-name">Traci Hughes</dt>
+      <dd class="char-desc">A waitress who befriends Tim and Javier</dd>
+
+      <dt class="char-name">Lucas Kowalski</dt>
+      <dd class="char-desc">Base Commander for Carswell Airforce Base</dd>
+
+      <dt class="char-name">Leonard Malley</dt>
+      <dd class="char-desc">Captain of the USS Eric Hass, stationed off the coast of Alaska</dd>
+
+      <dt class="char-name">Cameron Mendiola</dt>
+      <dd class="char-desc">Governor of Guam; Democratic Candidate for President</dd>
+
+      <dt class="char-name">Oscar Newbury</dt>
+      <dd class="char-desc">University Professor; Republican Vice Presidential Candidate</dd>
+
+      <dt class="char-name">Anne Riley</dt>
+      <dd class="char-desc">A friend of Victoria Heim</dd>
+
+      <dt class="char-name">Regina Stephenson</dt>
+      <dd class="char-desc">Timothy Hall's Boss</dd>
+
+      <dt class="char-name">Kareem Tolen</dt>
+      <dd class="char-desc">Federal Employee, Recruiter for Ru-Lima Compound Employees</dd>
+    </dl>
+  </main>
+</body>
+</html>
