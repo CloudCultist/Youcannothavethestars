@@ -1,32 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  background-color: #f4f4f9;
-  color: #222;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  background-image: url('images/starfield.jpg'); /* Replace with your starfield image path */
+  background-repeat: repeat;
+  background-size: contain;
+  color: #cdd6f4;
   margin: 0;
   padding: 2rem;
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
 h1, h2, h3 {
-  color: #2a2a2a;
+  color: #4fd1ff;
   margin-top: 2rem;
+  text-shadow: 0 0 6px #4fd1ff88;
 }
 
 a {
-  color: #004c99;
+  color: #00ffff;
   text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #3ee8ff;
+  text-shadow: 0 0 8px #3ee8ffcc;
 }
 
 nav {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  background-color: #121417;
+  border-bottom: 1px solid #222;
   padding: 1rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -34,7 +43,13 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  font-weight: bold;
+  font-weight: 700;
+  color: #4fd1ff;
+}
+
+nav a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffffcc;
 }
 
 footer {
@@ -43,20 +58,9 @@ footer {
   font-size: 0.9rem;
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #222;
 }
 
 ul li {
   margin-bottom: 1.5rem;
-}
-
-/* Navigation styling */
-nav span {
-  margin: 0 0.75rem;
-}
-
-nav a,
-nav strong {
-  text-decoration: none;
-  font-weight: bold;
 }
