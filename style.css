@@ -1,73 +1,105 @@
-/* Import font */
+/* Import IBM Plex Sans font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
+/* Reset and base styles */
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  margin: 0;
-  padding: 2rem;
-  background-image: url('images/your-image.jpg'); /* Update path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('astronauts-cosmic-gaze-stockcake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-/* Dark overlay to improve readability */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Container centers content and limits width */
 .container {
-  max-width: 800px; /* comfortable reading width */
-  margin: 0 auto;
-  background-color: rgba(0,0,0,0.5); /* optional translucent background */
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  box-sizing: border-box;
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.55); /* semi-transparent overlay for readability */
+    border-radius: 10px;
 }
 
-/* Headers */
+/* Navigation menu */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: rgba(17, 17, 17, 0.85);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #003366;
+}
+
+nav a, nav strong {
+    color: #3399ff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav strong.active {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Headings */
 h1, h2, h3 {
-  color: #00aaff;
-  font-weight: 600;
-  margin-top: 1.5rem;
+    color: #00aaff;
+    font-weight: 600;
+    margin-top: 1.5rem;
 }
 
-/* Paragraphs */
+/* Paragraphs and text */
 p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
-/* Links */
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Links inside content */
 a {
-  color: #3399ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #3399ff;
+    text-decoration: none;
 }
 
 a:hover {
-  color: #ffcc00;
-  text-decoration: underline;
+    color: #ffcc00;
+    text-decoration: underline;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-  }
-  .container {
-    padding: 1rem 1.2rem;
-    max-width: 100%;
-  }
+/* Footer */
+footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #003366;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .container {
+        padding: 1rem;
+    }
+
+    nav {
+        gap: 0.5rem;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
 }
