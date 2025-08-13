@@ -1,323 +1,78 @@
-/* Import IBM Plex Sans font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-
+/* ====== Global Styles ====== */
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('astronauts-cosmic-gaze-stockcake.jpg');
-  background-size: cover;        /* Cover entire viewport */
-  background-position: center;
+  background-color: #000;         /* Fallback color (black) */
+  background-image: url('astronauts-cosmic-gaze-stockcake.jpg'); /* Path to your image */
+  background-size: cover;         /* Cover entire viewport */
+  background-position: center;    /* Center the background */
   background-repeat: no-repeat;
-  background-attachment: fixed;  /* Keeps image fixed on scroll */
-  color: #fff;                   /* White text for contrast */
+  background-attachment: fixed;   /* Keep image fixed on scroll */
+  color: #fff;                     /* White text for contrast */
   margin: 0;
   padding: 2rem;
   line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Optional: Add slight text shadow for readability */
+body, p, h1, h2, h3, h4, h5, h6, figcaption {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ====== Layout Container ====== */
+.container {
   max-width: 800px;
-  position: relative;            /* Needed for overlay */
-  z-index: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent dark overlay */
+  padding: 2rem;
+  border-radius: 10px;
 }
 
-/* Dark overlay to improve text readability */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.55); /* Adjust opacity as needed */
-  z-index: -1;                      /* Behind content */
-  pointer-events: none;
-}
-
-/* Headers */
+/* ====== Headings ====== */
 h1, h2, h3 {
-  color: #00aaff; /* Bright cyan */
-  margin-top: 2rem;
-  font-weight: 600;
-}
-
-/* Navigation styling */
-nav {
-  background-color: rgba(17, 17, 17, 0.85); /* Slightly transparent dark */
-  border-bottom: 1px solid #003366;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 0.95rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav a {
-  color: #3399ff;   /* Blue links */
-  margin: 0 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #66ccff;
-  text-decoration: underline;
-}
-
-nav strong, nav strong.active {
-  color: #ffcc00; /* Amber highlight */
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-/* Footer styling */
-footer {
-  text-align: center;
-  color: #aaa; /* Softer gray for readability */
-  font-size: 0.9rem;
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid #003366;
-}
-
-/* Lists */
-ul li {
-  margin-bottom: 1.5rem;
-  color: #99ccff;
-}
-
-/* Definition lists */
-dl {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  border-left: 4px solid #00aaff;
-  padding-left: 1rem;
-}
-
-dt {
-  font-weight: 700;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #ffcc00;
-}
-
-dd {
-  margin-left: 1.5rem;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  color: #99ccff;
-  font-style: italic;
-}
-
-/* Character list classes */
-.char-name {
-  color: #ffcc00;
-  font-weight: 700;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-}
-
-.char-desc {
-  color: #99ccff;
-  font-style: italic;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Links inside main content */
-a {
-  color: #3399ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ffcc00;
-  text-decoration: underline;
-}
-
-/* Sub-navigation for character categories */
-.character-subnav {
-  margin-top: 1rem;
-}
-
-.character-subnav ul {
-  list-style: none;
-  padding: 0;
-  margin: 1em 0;
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  background-color: #222;
-  padding: 0.5em;
-  border-radius: 6px;
-}
-
-.character-subnav a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.3em 0.8em;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.character-subnav a:hover,
-.character-subnav a.active {
-  background-color: #3399ff;
-  color: #000;
-  text-decoration: none;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-    max-width: 100%;
-    font-size: 1rem;
-  }
-
-  nav a, nav strong {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  dt, .char-name {
-    font-size: 1rem;
-  }
-
-  dd, .char-desc {
-    font-size: 0.9rem;
-  }
-
-  .character-subnav ul {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-}
-
-/* Newspaper style for historical articles */
-.newspaper-article {
-  background: linear-gradient(to bottom, #fdf6e3 0%, #f0e9d2 100%);
-  color: #2a2a2a;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  padding: 2rem 3rem;
-  max-width: 700px;
-  margin: 2rem auto;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid #c2b280;
-  border-radius: 4px;
-  line-height: 1.5;
-  column-count: 2;
-  column-gap: 3rem;
-  text-align: justify;
-}
-
-.newspaper-article header h1 {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #111;
-  column-span: all;
-  margin-bottom: 0.3rem;
-}
-
-.newspaper-article header h2,
-.newspaper-article header h3 {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: normal;
-  color: #5a4b2c;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  column-span: all;
-}
-
-.newspaper-article p {
-  font-size: 0.95rem;
-  margin-bottom: 1.1rem;
-  text-indent: 1.2em;
-}
-
-.newspaper-article p strong {
   font-weight: bold;
 }
 
-@media (max-width: 800px) {
-  .newspaper-article {
-    column-count: 1;
-    padding: 1rem 1.5rem;
-  }
-
-  .newspaper-article header h1 {
-    font-size: 1.8rem;
-  }
+/* ====== Links ====== */
+a {
+  color: #ffae42; /* Warm orange to match background */
+  text-decoration: none;
 }
 
-/* Book page styling with subtle curved left edge and shadow */
-.book-section {
-  margin-top: 3rem;
-}
-
-.book-page {
-  background-color: #f9f4e9; /* Cream background */
-  color: #2a2a2a;             /* Dark text */
-  font-family: 'Georgia', 'Times New Roman', serif;
-  padding: 2.5rem 3rem;
-  max-width: 800px;
-  margin: 2rem auto;
-  line-height: 1.6;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
-  position: relative;
-  z-index: 1; /* Keep above the overlay */
-}
-
-/* Subtle curved left edge with an overlay */
-.book-page::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3rem;
-  height: 100%;
-  background: #f9f4e9;
-  border-radius: 16px 0 0 16px;
-  box-shadow: inset 2px 0 4px rgba(0,0,0,0.1);
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Ensure links inside book page are distinct */
-.book-page a {
-  color: #006699;
+a:hover {
   text-decoration: underline;
 }
 
-.book-page a:hover {
-  color: #003355;
+/* ====== Article Styles ====== */
+.newspaper-article {
+  column-count: 2;
+  column-gap: 2rem;
 }
 
-body {
-    background-image: url("images/your-image.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white; /* Text will be white for readability */
-    margin: 0; /* Remove browser default margin */
-    padding: 0;
-    width: 100%; /* Ensure body spans the full width */
-    min-height: 100vh; /* Ensure full viewport height */
-    font-family: Arial, sans-serif;
+.newspaper-article figure {
+  break-inside: avoid; /* Prevent splitting figure across columns */
+  margin: 0 0 1.5rem 0;
 }
 
-.container {
-    max-width: 1200px; /* Optional: keeps content from being too wide on large screens */
-    margin: auto; /* Center the container */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent dark background for readability */
-    border-radius: 10px;
+.voice-quote blockquote {
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
 }
 
-.voice-quote {
-  break-inside: avoid;
-  page-break-inside: avoid; /* For print */
-  column-break-inside: avoid; /* For multi-column layouts */
+.speaker {
+  font-weight: bold;
 }
+
+.comment {
+  margin-top: 0.5rem;
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
