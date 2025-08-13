@@ -1,78 +1,73 @@
-/* ====== Global Styles ====== */
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
 body {
-  font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;         /* Fallback color (black) */
-  background-image: url('images/astronauts-cosmic-gaze-stockcake.jpg'); /* Path to your image */
-  background-size: cover;         /* Cover entire viewport */
-  background-position: center;    /* Center the background */
-  background-repeat: no-repeat;
-  background-attachment: fixed;   /* Keep image fixed on scroll */
-  color: #fff;                     /* White text for contrast */
+  font-family: 'IBM Plex Sans', sans-serif;
   margin: 0;
   padding: 2rem;
-  line-height: 1.6;
-  width: 100%;
+  background-image: url('images/your-image.jpg'); /* Update path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Optional: Add slight text shadow for readability */
-body, p, h1, h2, h3, h4, h5, h6, figcaption {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+/* Dark overlay to improve readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* ====== Layout Container ====== */
+/* Container centers content and limits width */
 .container {
-  max-width: 800px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent dark overlay */
-  padding: 2rem;
-  border-radius: 10px;
+  max-width: 800px; /* comfortable reading width */
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.5); /* optional translucent background */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-/* ====== Headings ====== */
+/* Headers */
 h1, h2, h3 {
-  font-weight: bold;
+  color: #00aaff;
+  font-weight: 600;
+  margin-top: 1.5rem;
 }
 
-/* ====== Links ====== */
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Links */
 a {
-  color: #ffae42; /* Warm orange to match background */
+  color: #3399ff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: #ffcc00;
   text-decoration: underline;
 }
 
-/* ====== Article Styles ====== */
-.newspaper-article {
-  column-count: 2;
-  column-gap: 2rem;
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    padding: 1rem 1.2rem;
+    max-width: 100%;
+  }
 }
-
-.newspaper-article figure {
-  break-inside: avoid; /* Prevent splitting figure across columns */
-  margin: 0 0 1.5rem 0;
-}
-
-.voice-quote blockquote {
-  font-style: italic;
-  margin: 0 0 0.5rem 0;
-}
-
-.speaker {
-  font-weight: bold;
-}
-
-.comment {
-  margin-top: 0.5rem;
-}
-
-/* ====== Footer ====== */
-footer {
-  text-align: center;
-  font-size: 0.85rem;
-  margin-top: 2rem;
-  opacity: 0.8;
-}
-
