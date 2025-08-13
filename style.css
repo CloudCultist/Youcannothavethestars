@@ -315,3 +315,9 @@ body {
     background-color: rgba(0, 0, 0, 0.6); /* Transparent dark background for readability */
     border-radius: 10px;
 }
+
+.voice-quote {
+  break-inside: avoid;
+  page-break-inside: avoid; /* For print */
+  column-break-inside: avoid; /* For multi-column layouts */
+}
