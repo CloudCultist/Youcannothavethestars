@@ -148,3 +148,62 @@ main ul li a {
 main ul li a:hover {
     text-decoration: underline;
 }
+
+/* --- Newspaper Article Styling --- */
+.newspaper-article {
+    font-family: 'Georgia', 'Times New Roman', serif; /* classic newspaper font */
+    background-color: rgba(255, 255, 255, 0.1); /* slightly transparent for clipping effect */
+    padding: 2rem;
+    margin: 2rem auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    column-count: 2;           /* number of columns */
+    column-gap: 3rem;          /* space between columns */
+    column-rule: 1px solid #999; /* vertical line between columns */
+}
+
+.newspaper-article header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.newspaper-article header h2 {
+    font-size: 1.2rem;
+    color: #ffdd99;
+    margin-bottom: 0.5rem;
+}
+
+.newspaper-article header h3 {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.newspaper-article header p {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.newspaper-article p {
+    text-align: justify;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.newspaper-article a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.newspaper-article a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust columns for smaller screens */
+@media (max-width: 800px) {
+    .newspaper-article {
+        column-count: 1;
+        padding: 1rem;
+    }
+}
