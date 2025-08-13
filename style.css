@@ -207,3 +207,51 @@ main ul li a:hover {
         padding: 1rem;
     }
 }
+/* Newspaper-style articles */
+.newspaper-article {
+    background-color: #fdf6e3; /* soft paper color */
+    color: #2c2c2c; /* dark text for readability */
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid #d1c7b7; /* subtle border like paper edges */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    column-count: 2; /* split into two columns */
+    column-gap: 2rem;
+    column-rule: 1px solid #ccc; /* vertical line between columns */
+    font-family: 'Georgia', 'Times New Roman', serif; /* classic newspaper font */
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Newspaper headers inside articles */
+.newspaper-article header h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.newspaper-article header h2, 
+.newspaper-article header h3, 
+.newspaper-article header p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    margin: 0.2rem 0;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Make images inside articles fit nicely */
+.newspaper-article img {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* Adjust columns on smaller screens */
+@media (max-width: 800px) {
+    .newspaper-article {
+        column-count: 1;
+        padding: 1.5rem;
+    }
+}
