@@ -325,19 +325,32 @@ main ul li a:hover {
         gap: 0.5rem;
         align-items: center;
     }
-}
 .character-subnav ul {
-  list-style: none;       /* remove bullet points */
+  list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;          /* arrange list items horizontally */
-  gap: 10px;              /* space between items */
+  display: flex;
+  justify-content: center; /* center horizontally */
 }
 
 .character-subnav li {
-  display: inline;        /* ensure they’re inline elements */
+  margin: 0 10px;
+  position: relative;
+}
+
+.character-subnav li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -12px;
+  color: #555; /* separator color */
 }
 
 .character-subnav a {
-  text-decoration: none;  /* optional: remove underline */
+  text-decoration: none;
+  color: #333; /* normal link color */
+  font-weight: bold;
+}
+
+.character-subnav a.active {
+  color: #c00; /* highlight for active link */
 }
