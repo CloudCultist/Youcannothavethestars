@@ -103,3 +103,48 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+/* --- Articles Page Styling --- */
+
+/* Target only the article pages in the /articles/ folder */
+body[src*="/articles/"], body[class*="articles"] {
+    font-family: 'Georgia', serif; /* Newspaper-style font for article content */
+    line-height: 1.5;
+    color: #fff;
+}
+
+/* Section headings within articles */
+main h2 {
+    color: #ffdd99;
+    border-bottom: 2px solid #ffdd99;
+    padding-bottom: 0.3rem;
+    margin-top: 2rem;
+    font-family: 'Georgia', serif;
+}
+
+/* Article list items for newspapers, op-eds, voices */
+main ul li {
+    background-color: rgba(255,255,255,0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ffdd99;
+}
+
+/* Dates and authors inside each article block */
+main ul li em {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Links inside article blocks */
+main ul li a {
+    font-weight: bold;
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+main ul li a:hover {
+    text-decoration: underline;
+}
