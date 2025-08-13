@@ -319,3 +319,10 @@ main ul li a:hover {
     font-size: 0.85rem;
     color: #555;
 }
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
