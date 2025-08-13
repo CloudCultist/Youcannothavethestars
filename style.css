@@ -326,3 +326,18 @@ main ul li a:hover {
         align-items: center;
     }
 }
+.character-subnav ul {
+  list-style: none;       /* remove bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;          /* arrange list items horizontally */
+  gap: 10px;              /* space between items */
+}
+
+.character-subnav li {
+  display: inline;        /* ensure they’re inline elements */
+}
+
+.character-subnav a {
+  text-decoration: none;  /* optional: remove underline */
+}
