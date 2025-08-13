@@ -384,3 +384,39 @@ main ul li a:hover {
 .character-subnav a.active {
   color: #c00;              /* active page highlight */
 }
+/* Character sub-navigation: always horizontal */
+.character-subnav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;            /* horizontal layout */
+  justify-content: center;  /* center items */
+  gap: 10px;                /* spacing between items */
+}
+
+.character-subnav li {
+  position: relative;
+}
+
+.character-subnav li:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;        /* space between link and separator */
+  color: #555;              /* separator color */
+}
+
+.character-subnav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.character-subnav a.active {
+  color: #c00;              /* active page highlight */
+}
+
+/* Responsive tweaks only (optional) */
+@media (max-width: 800px) {
+  .character-subnav ul {
+    flex-wrap: wrap;  /* allow wrapping if screen is narrow */
+  }
+}
