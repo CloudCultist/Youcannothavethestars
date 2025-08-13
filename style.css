@@ -255,3 +255,67 @@ main ul li a:hover {
         padding: 1.5rem;
     }
 }
+/* Newspaper-style article container */
+.newspaper-article {
+    background-color: #fdfcf6; /* off-white for newspaper look */
+    color: #1a1a1a;           /* dark text for contrast */
+    padding: 2rem;
+    column-count: 2;           /* two columns like a newspaper */
+    column-gap: 3rem;          /* spacing between columns */
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    hyphens: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Prevent full paragraphs or headings from breaking across columns */
+.newspaper-article p,
+.newspaper-article h1,
+.newspaper-article h2,
+.newspaper-article h3,
+.newspaper-article ul,
+.newspaper-article ol {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1.2em;
+}
+
+/* Allow short blocks (like quotes or single lines) to flow naturally */
+.newspaper-article blockquote,
+.newspaper-article li {
+    break-inside: auto;
+}
+
+/* Style headers and subheaders */
+.newspaper-article h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.newspaper-article h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+.newspaper-article h3 {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Style links inside newspaper articles */
+.newspaper-article a {
+    color: #003366;
+    text-decoration: underline;
+}
+
+.newspaper-article a:hover {
+    color: #cc0000;
+}
+
+/* Optional: smaller font for citations or dates */
+.newspaper-article p em,
+.newspaper-article header p {
+    font-size: 0.85rem;
+    color: #555;
+}
