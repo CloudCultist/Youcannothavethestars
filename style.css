@@ -476,3 +476,69 @@ nav strong.active {
   }
 }
 
+/* --- Main Navigation Fixes --- */
+
+/* Main nav styling for all pages */
+nav a,
+nav strong.active {
+    color: #3399ff;          /* standard main nav link color */
+    text-decoration: none;
+    font-size: 1rem;         /* normal size for all pages */
+    white-space: nowrap;     /* prevent awkward line breaks */
+}
+
+/* Hover and active states */
+nav a:hover {
+    color: #ffcc00;          /* hover color */
+}
+
+nav strong.active {
+    color: #ffcc00;          /* active page color */
+}
+
+/* Ensure proper size on small screens (phones) */
+@media (max-width: 800px) {
+    nav a,
+    nav strong.active {
+        font-size: 1rem;     /* fixes small nav links on About and Articles pages */
+    }
+
+    nav {
+        flex-direction: row !important;  /* keep nav horizontal on phones */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+/* --- Character Subnav Fixes --- */
+
+/* Character sub-navigation styling */
+.character-subnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;            /* horizontal layout */
+    justify-content: center;  /* center items */
+    gap: 10px;                /* spacing between items */
+    flex-wrap: wrap;          /* allow wrapping on narrow screens */
+}
+
+.character-subnav li {
+    position: relative;
+}
+
+.character-subnav li:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;        /* space between link and separator */
+    color: #3399ff;           /* match main nav color */
+}
+
+.character-subnav a {
+    text-decoration: none;
+    color: #3399ff;           /* match main nav color */
+    font-weight: bold;
+}
+
+.character-subnav a.active {
+    color: #ffcc00;           /* highlight for active link */
+}
