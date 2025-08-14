@@ -1,578 +1,300 @@
-/* Import IBM Plex Sans font from Google Fonts */
+/* ================================
+   Fonts
+================================== */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
-/* Reset and base styles */
+/* ================================
+   Base Styles
+================================== */
 body {
-    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('images/astronauts-cosmic-gaze-stockcake.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+  font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('images/astronauts-cosmic-gaze-stockcake.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem;
-    background-color: rgba(0,0,0,0.55); /* semi-transparent overlay for readability */
-    border-radius: 10px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
 }
 
-/* Navigation menu */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background-color: rgba(17, 17, 17, 0.85);
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #003366;
-}
-
-nav a, nav strong {
-    color: #3399ff;
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav a:hover, nav strong.active {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-/* Headings */
 h1, h2, h3 {
-    color: #00aaff;
-    font-weight: 600;
-    margin-top: 1.5rem;
+  color: #00aaff;
+  font-weight: 600;
+  margin-top: 1.5rem;
 }
 
-/* Paragraphs and text */
 p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 ul, ol {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Links inside content */
 a {
-    color: #3399ff;
-    text-decoration: none;
+  color: #3399ff;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #ffcc00;
-    text-decoration: underline;
+  color: #ffcc00;
+  text-decoration: underline;
 }
 
-/* Footer */
 footer {
-    text-align: center;
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid #003366;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #003366;
 }
 
-/* Responsive adjustments */
+/* Responsive base adjustments */
 @media (max-width: 800px) {
-    .container {
-        padding: 1rem;
-    }
-
-    nav {
-        gap: 0.5rem;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.2rem;
-    }
-}
-
-/* --- Articles Page Styling --- */
-
-/* Target only the article pages in the /articles/ folder */
-body[src*="/articles/"], body[class*="articles"] {
-    font-family: 'Georgia', serif; /* Newspaper-style font for article content */
-    line-height: 1.5;
-    color: #fff;
-}
-
-/* Section headings within articles */
-main h2 {
-    color: #ffdd99;
-    border-bottom: 2px solid #ffdd99;
-    padding-bottom: 0.3rem;
-    margin-top: 2rem;
-    font-family: 'Georgia', serif;
-}
-
-/* Article list items for newspapers, op-eds, voices */
-main ul li {
-    background-color: rgba(255,255,255,0.1);
+  .container {
     padding: 1rem;
-    margin-bottom: 1rem;
-    border-left: 5px solid #ffdd99;
-}
+  }
 
-/* Dates and authors inside each article block */
-main ul li em {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-style: italic;
-    color: #ccc;
-}
-
-/* Links inside article blocks */
-main ul li a {
-    font-weight: bold;
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-main ul li a:hover {
-    text-decoration: underline;
-}
-
-/* --- Newspaper Article Styling --- */
-.newspaper-article {
-    font-family: 'Georgia', 'Times New Roman', serif; /* classic newspaper font */
-    background-color: rgba(255, 255, 255, 0.1); /* slightly transparent for clipping effect */
-    padding: 2rem;
-    margin: 2rem auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    column-count: 2;           /* number of columns */
-    column-gap: 3rem;          /* space between columns */
-    column-rule: 1px solid #999; /* vertical line between columns */
-}
-
-.newspaper-article header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.newspaper-article header h2 {
+  h1, h2, h3 {
     font-size: 1.2rem;
-    color: #ffdd99;
-    margin-bottom: 0.5rem;
+  }
 }
 
-.newspaper-article header h3 {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 1rem;
+/* ================================
+   Main Navigation
+================================== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(17, 17, 17, 0.85);
+  border-bottom: 1px solid #003366;
+  text-align: center;
 }
 
-.newspaper-article header p {
-    font-style: italic;
-    color: #ccc;
-    margin-bottom: 1rem;
+nav a,
+nav strong.active {
+  color: #3399ff;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.newspaper-article p {
-    text-align: justify;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+nav a:hover,
+nav strong.active {
+  color: #ffcc00;
 }
 
-.newspaper-article a {
+@media (max-width: 800px) {
+  nav {
+    flex-direction: row !important;
+    justify-content: center;
+  }
+
+  nav a,
+  nav strong.active {
+    font-size: 1.2rem;
+  }
+}
+
+/* ================================
+   Character Sub-Navigation
+================================== */
+.character-subnav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.character-subnav li {
+  position: relative;
+}
+
+.character-subnav li:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  color: #3399ff;
+}
+
+.character-subnav a {
+  text-decoration: none;
+  color: #3399ff;
+  font-weight: bold;
+}
+
+.character-subnav a.active {
+  color: #ffcc00;
+}
+
+@media (max-width: 800px) {
+  .character-subnav a {
+    color: #3399ff;
+  }
+
+  .character-subnav a.active {
     color: #ffcc00;
-    text-decoration: none;
+  }
 }
 
-.newspaper-article a:hover {
-    text-decoration: underline;
+/* ================================
+   Character Page Styling
+================================== */
+.char-name {
+  color: #3399ff;
+  font-weight: bold;
 }
 
-/* Adjust columns for smaller screens */
-@media (max-width: 800px) {
-    .newspaper-article {
-        column-count: 1;
-        padding: 1rem;
-    }
+.char-desc {
+  color: #ccc;
+  font-weight: normal;
 }
-/* Newspaper-style articles */
+
+/* ================================
+   Article Styling (Scoped to .newspaper-article)
+================================== */
 .newspaper-article {
-    background-color: #fdf6e3; /* soft paper color */
-    color: #2c2c2c; /* dark text for readability */
-    padding: 2rem;
-    margin: 2rem 0;
-    border: 1px solid #d1c7b7; /* subtle border like paper edges */
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    column-count: 2; /* split into two columns */
-    column-gap: 2rem;
-    column-rule: 1px solid #ccc; /* vertical line between columns */
-    font-family: 'Georgia', 'Times New Roman', serif; /* classic newspaper font */
-    line-height: 1.6;
-    text-align: justify;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: #fdfcf6;
+  color: #1a1a1a;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  column-count: 2;
+  column-gap: 3rem;
+  column-rule: 1px solid #ccc;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
 }
 
-/* Newspaper headers inside articles */
-.newspaper-article header h1 {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.newspaper-article header h2, 
-.newspaper-article header h3, 
-.newspaper-article header p {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    margin: 0.2rem 0;
-    font-weight: normal;
-    color: #555;
-}
-
-/* Make images inside articles fit nicely */
-.newspaper-article img {
-    max-width: 100%;
-    display: block;
-    margin: 1rem auto;
-}
-
-/* Adjust columns on smaller screens */
-@media (max-width: 800px) {
-    .newspaper-article {
-        column-count: 1;
-        padding: 1.5rem;
-    }
-}
-/* Newspaper-style article container */
-.newspaper-article {
-    background-color: #fdfcf6; /* off-white for newspaper look */
-    color: #1a1a1a;           /* dark text for contrast */
-    padding: 2rem;
-    column-count: 2;           /* two columns like a newspaper */
-    column-gap: 3rem;          /* spacing between columns */
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.6;
-    hyphens: auto;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Prevent full paragraphs or headings from breaking across columns */
 .newspaper-article p,
 .newspaper-article h1,
 .newspaper-article h2,
 .newspaper-article h3,
 .newspaper-article ul,
 .newspaper-article ol {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: 1.2em;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 1.2em;
 }
 
-/* Allow short blocks (like quotes or single lines) to flow naturally */
 .newspaper-article blockquote,
 .newspaper-article li {
-    break-inside: auto;
+  break-inside: auto;
 }
 
-/* Style headers and subheaders */
 .newspaper-article h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-.newspaper-article h2 {
-    font-size: 1.3rem;
-    font-weight: normal;
-    margin-bottom: 0.5rem;
-}
-.newspaper-article h3 {
-    font-size: 1rem;
-    font-style: italic;
-    margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Style links inside newspaper articles */
+.newspaper-article h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.newspaper-article h3 {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
 .newspaper-article a {
-    color: #003366;
-    text-decoration: underline;
+  color: #003366;
+  text-decoration: underline;
 }
 
 .newspaper-article a:hover {
-    color: #cc0000;
+  color: #cc0000;
 }
 
-/* Optional: smaller font for citations or dates */
 .newspaper-article p em,
 .newspaper-article header p {
-    font-size: 0.85rem;
-    color: #555;
+  font-size: 0.85rem;
+  color: #555;
 }
+
+.newspaper-article img {
+  max-width: 100%;
+  display: block;
+  margin: 1rem auto;
+}
+
 @media (max-width: 800px) {
-    nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-    }
-.character-subnav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* center horizontally */
+  .newspaper-article {
+    column-count: 1;
+    padding: 1.5rem;
+  }
 }
 
-.character-subnav li {
-  margin: 0 10px;
-  position: relative;
+/* ================================
+   Article List Block (like op-eds)
+================================== */
+main ul li {
+  background-color: rgba(255,255,255,0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #ffdd99;
 }
 
-.character-subnav li:not(:last-child)::after {
-  content: "|";
-  position: absolute;
-  right: -12px;
-  color: #555; /* separator color */
+main ul li em {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  color: #ccc;
 }
 
-.character-subnav a {
-  text-decoration: none;
-  color: #333; /* normal link color */
+main ul li a {
   font-weight: bold;
-}
-
-.character-subnav a.active {
-  color: #c00; /* highlight for active link */
-}
-
-/* Character sub-navigation */
-.character-subnav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;            /* horizontal layout */
-  justify-content: center;  /* center items */
-  gap: 10px;                /* spacing between items */
-}
-
-.character-subnav li {
-  position: relative;
-}
-
-.character-subnav li:not(:last-child)::after {
-  content: "|";
-  margin-left: 10px;        /* space between link and separator */
-  color: #555;              /* separator color */
-}
-
-.character-subnav a {
+  color: #ffcc00;
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
 }
 
-.character-subnav a.active {
-  color: #c00;              /* active page highlight */
-}
-/* Character sub-navigation: always horizontal */
-.character-subnav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;            /* horizontal layout */
-  justify-content: center;  /* center items */
-  gap: 10px;                /* spacing between items */
+main ul li a:hover {
+  text-decoration: underline;
 }
 
-.character-subnav li {
-  position: relative;
+/* Section headings in articles */
+main h2 {
+  color: #ffdd99;
+  border-bottom: 2px solid #ffdd99;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  font-family: 'Georgia', serif;
 }
 
-.character-subnav li:not(:last-child)::after {
-  content: "|";
-  margin-left: 10px;        /* space between link and separator */
-  color: #555;              /* separator color */
-}
-
-.character-subnav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.character-subnav a.active {
-  color: #c00;              /* active page highlight */
-}
-
-/* Responsive tweaks only (optional) */
-@media (max-width: 800px) {
-  .character-subnav ul {
-    flex-wrap: wrap;  /* allow wrapping if screen is narrow */
-  }
-}
-/* Force nav horizontal on all devices */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-direction: row !important; /* overrides the column rule */
-}
-
-nav a, nav strong.active {
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-/* Force nav horizontal on all devices */
-nav {
-  display: flex;
-  flex-wrap: wrap;         /* Allows wrapping on very small screens */
-  justify-content: center; /* Centers items horizontally */
-  gap: 0.5rem;              /* Space between links */
-  flex-direction: row !important; /* Override any column layout */
-  text-align: center;
-}
-
-nav a,
-nav strong.active {
-  text-decoration: none;
-  font-size: 1rem;          /* Consistent size */
-  white-space: nowrap;      /* Prevents awkward breaks */
-  color: #555;              /* Default color */
-}
-
-nav a:hover {
-  color: #000;              /* Hover effect */
-}
-
-nav strong.active {
-  color: #000;              /* Highlight for active page */
-}
-/* Fix character subnav colors on small screens to match main nav */
-@media (max-width: 800px) {
-  .character-subnav a {
-    color: #3399ff;       /* same as main nav links */
-  }
-  .character-subnav a.active {
-    color: #ffcc00;       /* same as main nav active link */
-  }
-}
-/* Ensure main nav stays readable on phones */
-@media (max-width: 800px) {
-  nav a,
-  nav strong.active {
-    font-size: 1.2rem; /* slightly bigger for readability */
-  }
-}
-
-/* --- Main Navigation Fixes --- */
-
-/* Main nav styling for all pages */
-nav a,
-nav strong.active {
-    color: #3399ff;          /* standard main nav link color */
-    text-decoration: none;
-    font-size: 1rem;         /* normal size for all pages */
-    white-space: nowrap;     /* prevent awkward line breaks */
-}
-
-/* Hover and active states */
-nav a:hover {
-    color: #ffcc00;          /* hover color */
-}
-
-nav strong.active {
-    color: #ffcc00;          /* active page color */
-}
-
-/* Ensure proper size on small screens (phones) */
-@media (max-width: 800px) {
-    nav a,
-    nav strong.active {
-        font-size: 1rem;     /* fixes small nav links on About and Articles pages */
-    }
-
-    nav {
-        flex-direction: row !important;  /* keep nav horizontal on phones */
-        justify-content: center;
-        gap: 0.5rem;
-    }
-}
-
-/* --- Character Subnav Fixes --- */
-
-/* Character sub-navigation styling */
-.character-subnav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;            /* horizontal layout */
-    justify-content: center;  /* center items */
-    gap: 10px;                /* spacing between items */
-    flex-wrap: wrap;          /* allow wrapping on narrow screens */
-}
-
-.character-subnav li {
-    position: relative;
-}
-
-.character-subnav li:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;        /* space between link and separator */
-    color: #3399ff;           /* match main nav color */
-}
-
-.character-subnav a {
-    text-decoration: none;
-    color: #3399ff;           /* match main nav color */
-    font-weight: bold;
-}
-
-.character-subnav a.active {
-    color: #ffcc00;           /* highlight for active link */
-}
-/* Character names */
-.char-name {
-    color: #3399ff; /* change this to the color you want for names */
-    font-weight: bold; /* optional, makes names stand out */
-}
-
-/* Character descriptions */
-.char-desc {
-    color: #ccc; /* change this to a lighter/darker color to differentiate from names */
-    font-weight: normal; /* ensures descriptions aren’t bold */
-}
-    /* Ensure main nav is readable and horizontal on phones for all pages */
-@media (max-width: 800px) {
-    nav {
-        flex-direction: row !important; /* force horizontal layout */
-        justify-content: center;
-        gap: 0.5rem;
-    }
-
-    nav a,
-    nav strong.active {
-        font-size: 1rem;          /* consistent size */
-        color: #3399ff;           /* matches main nav color */
-        white-space: nowrap;      /* prevents wrapping */
-    }
-
-    nav a:hover {
-        color: #ffcc00;           /* hover highlight */
-    }
-
-    nav strong.active {
-        color: #ffcc00;           /* active link highlight */
-    }
+/* Override font style only on article pages */
+body[src*="/articles/"],
+body[class*="articles"] {
+  font-family: 'Georgia', serif;
+  line-height: 1.5;
+  color: #fff;
 }
