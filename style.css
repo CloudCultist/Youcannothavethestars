@@ -553,3 +553,26 @@ nav strong.active {
     color: #ccc; /* change this to a lighter/darker color to differentiate from names */
     font-weight: normal; /* ensures descriptions aren’t bold */
 }
+    /* Ensure main nav is readable and horizontal on phones for all pages */
+@media (max-width: 800px) {
+    nav {
+        flex-direction: row !important; /* force horizontal layout */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a,
+    nav strong.active {
+        font-size: 1rem;          /* consistent size */
+        color: #3399ff;           /* matches main nav color */
+        white-space: nowrap;      /* prevents wrapping */
+    }
+
+    nav a:hover {
+        color: #ffcc00;           /* hover highlight */
+    }
+
+    nav strong.active {
+        color: #ffcc00;           /* active link highlight */
+    }
+}
