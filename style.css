@@ -542,3 +542,14 @@ nav strong.active {
 .character-subnav a.active {
     color: #ffcc00;           /* highlight for active link */
 }
+/* Character names */
+.char-name {
+    color: #3399ff; /* change this to the color you want for names */
+    font-weight: bold; /* optional, makes names stand out */
+}
+
+/* Character descriptions */
+.char-desc {
+    color: #ccc; /* change this to a lighter/darker color to differentiate from names */
+    font-weight: normal; /* ensures descriptions aren’t bold */
+}
