@@ -420,3 +420,16 @@ main ul li a:hover {
     flex-wrap: wrap;  /* allow wrapping if screen is narrow */
   }
 }
+/* Force nav horizontal on all devices */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: row !important; /* overrides the column rule */
+}
+
+nav a, nav strong.active {
+  font-size: 1rem;
+  white-space: nowrap;
+}
