@@ -327,4 +327,52 @@ body[class*="articles"] {
     font-size: 1rem; /* Adjust font size */
   }
 }
+/* ================================
+   Character Sub-Navigation
+================================== */
+.character-subnav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Ensure horizontal layout */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.character-subnav li {
+  position: relative;
+}
+
+.character-subnav li:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  color: #3399ff;
+}
+
+.character-subnav a {
+  text-decoration: none;
+  color: #3399ff;
+  font-weight: bold;
+}
+
+.character-subnav a.active {
+  color: #ffcc00;
+}
+
+@media (max-width: 800px) {
+  /* Ensure horizontal layout on smaller screens as well */
+  .character-subnav ul {
+    flex-direction: row; /* Force horizontal alignment */
+    justify-content: center;
+  }
+
+  .character-subnav a {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .character-subnav a.active {
+    color: #ffcc00;
+  }
+}
 
