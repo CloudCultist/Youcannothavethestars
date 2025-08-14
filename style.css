@@ -43,7 +43,7 @@ nav a, nav strong {
 
 nav a:hover, nav strong.active {
     color: #ffcc00;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Headings */
