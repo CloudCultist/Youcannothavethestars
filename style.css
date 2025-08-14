@@ -433,3 +433,30 @@ nav a, nav strong.active {
   font-size: 1rem;
   white-space: nowrap;
 }
+
+/* Force nav horizontal on all devices */
+nav {
+  display: flex;
+  flex-wrap: wrap;         /* Allows wrapping on very small screens */
+  justify-content: center; /* Centers items horizontally */
+  gap: 0.5rem;              /* Space between links */
+  flex-direction: row !important; /* Override any column layout */
+  text-align: center;
+}
+
+nav a,
+nav strong.active {
+  text-decoration: none;
+  font-size: 1rem;          /* Consistent size */
+  white-space: nowrap;      /* Prevents awkward breaks */
+  color: #555;              /* Default color */
+}
+
+nav a:hover {
+  color: #000;              /* Hover effect */
+}
+
+nav strong.active {
+  color: #000;              /* Highlight for active page */
+}
+
