@@ -459,4 +459,13 @@ nav a:hover {
 nav strong.active {
   color: #000;              /* Highlight for active page */
 }
+/* Fix character subnav colors on small screens to match main nav */
+@media (max-width: 800px) {
+  .character-subnav a {
+    color: #3399ff;       /* same as main nav links */
+  }
+  .character-subnav a.active {
+    color: #ffcc00;       /* same as main nav active link */
+  }
+}
 
