@@ -298,3 +298,33 @@ body[class*="articles"] {
   line-height: 1.5;
   color: #fff;
 }
+@media (max-width: 800px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Adjusting nav font size and padding */
+  nav {
+    padding: 0.5rem; /* Reduce padding */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    flex-direction: row !important; /* Ensure horizontal layout */
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav a,
+  nav strong.active {
+    font-size: 0.9rem; /* Smaller font for mobile */
+    padding: 0.5rem 1rem; /* Adjust padding to fit better on small screens */
+  }
+
+  /* Character Subnav Styles */
+  .character-subnav a {
+    font-size: 1rem; /* Adjust font size */
+  }
+}
+
