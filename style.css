@@ -375,4 +375,50 @@ body[class*="articles"] {
     color: #ffcc00;
   }
 }
+/* ================================
+   Main Navigation
+================================== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem; /* Reduced padding to make the nav bar smaller */
+  margin-bottom: 2rem;
+  background-color: rgba(17, 17, 17, 0.85);
+  border-bottom: 1px solid #003366;
+  text-align: center;
+  height: auto; /* Let the nav shrink based on content */
+}
+
+nav a,
+nav strong.active {
+  color: #3399ff;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav strong.active {
+  color: #ffcc00;
+}
+
+@media (max-width: 800px) {
+  nav {
+    padding: 0.3rem; /* Reduced padding further for mobile */
+    font-size: 0.9rem; /* Keep font size small for mobile */
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav a,
+  nav strong.active {
+    font-size: 0.9rem; /* Reduce font size on mobile */
+    padding: 0.3rem 0.8rem; /* Smaller padding around the links */
+  }
+}
 
