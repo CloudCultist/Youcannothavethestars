@@ -466,4 +466,26 @@ nav strong.active {
     color: #ffcc00;
   }
 }
+@media (max-width: 800px) {
+  nav {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;         /* Allow wrapping if needed */
+    gap: 0.3rem;             /* Small spacing between links */
+    max-width: 100%;         /* Prevent overflow */
+    overflow-x: hidden;      /* Hide any accidental overflow */
+    box-sizing: border-box;
+  }
+
+  nav a,
+  nav strong.active {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    white-space: nowrap;     /* Prevent word wrap */
+    flex: none;              /* Don't force equal widths */
+    text-align: center;
+  }
+}
 
