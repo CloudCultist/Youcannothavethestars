@@ -421,4 +421,49 @@ nav strong.active {
     padding: 0.3rem 0.8rem; /* Smaller padding around the links */
   }
 }
+@media (max-width: 800px) {
+  /* ==== Main Navigation Cleanup ==== */
+  nav {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 0; /* Remove extra space between links */
+  }
+
+  nav a,
+  nav strong.active {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    flex: 1; /* Equal space for all links */
+    text-align: center;
+  }
+
+  /* ==== Character Subnav Cleanup ==== */
+  .character-subnav ul {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+  }
+
+  .character-subnav li {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+
+  .character-subnav li:not(:last-child)::after {
+    margin-left: 5px;
+  }
+
+  .character-subnav a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    display: inline-block;
+  }
+
+  .character-subnav a.active {
+    color: #ffcc00;
+  }
+}
 
