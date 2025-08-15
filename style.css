@@ -489,3 +489,8 @@ nav strong.active {
   }
 }
 
+@media (max-width: 800px) {
+  body {
+    background-attachment: scroll;
+  }
+}
