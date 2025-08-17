@@ -501,3 +501,8 @@ nav strong.active {
     background-position: center;
   }
 }
+.column-break {
+  break-before: column;
+  -webkit-column-break-before: always;
+  -moz-column-break-before: always;
+}
