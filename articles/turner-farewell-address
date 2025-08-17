@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full Text: President Alvin Turner's Farewell Address – The Dominion Review</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav>
+      <a href="../index.html">Home</a> |
+      <a href="../about.html">About</a> |
+      <a href="../novel.html">Full Novel</a> |
+      <a href="../timeline.html">Novel Timeline</a> |
+      <a href="../characters.html">Characters</a> |
+      <strong class="active">Articles</strong> |
+      <a href="../lectures.html">University Lectures</a> |
+      <a href="../multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
+  </nav>
+
+  <main>
+    <article class="newspaper-article">
+      <header>
+        <h2>The Dominion Review</h2>
+        <p><strong>January 20, 2033</strong></p>
+        <h1>Full Text: President Alvin Turner's Farewell Address</h1>
+        <h3>Delivered from the Oval Office, Washington, D.C.</h3>
+      </header>
+
+      <p><em>As President Alvin Turner concludes his second term, The Dominion Review publishes the full transcript of his farewell address, delivered just hours before the inauguration of President-elect Jacob Miller and Earth’s historic first contact with extraterrestrial life.</em></p>
+
+      <hr />
+
+      <p><strong>My fellow Americans,</strong></p>
+
+      <p>As I prepare to leave this office, I find myself reflecting not just on the years of my own presidency, but on the journey our nation, and indeed, our world, has taken over the past century.</p>
+
+      <p>After the fires of World War II were extinguished, the world stood at a crossroads. The horrors of fascism and imperialism had been confronted and defeated, and, in their place, a new era dawned, one defined not by conquest, but by cooperation.</p>
+
+      <p>In the decades that followed, the United States, alongside the Soviet Union, chose to embrace the better angels of our nature. Though we came from different traditions, we found common purpose in building societies that placed human dignity at the center of progress.</p>
+
+      <p>And, following our example, nations across Asia, Africa, the Americas, and Europe followed suit—not through coercion, but through shared aspiration. The world turned its attention from conflict to construction, and knowledge was no longer hoarded but freely shared. Diseases that once ravaged entire continents became footnotes in medical history. The internet, born of scientific curiosity and international collaboration, became a bridge across cultures. Literacy, once a luxury, became a right.</p>
+
+      <p>It was not a perfect path. We faced challenges, and we made mistakes. But what marked that era, and what I hope marks this moment still, is that greed and power did not define our destiny. Those pitfalls of human nature have taken a backseat and now, altruism has reigned supreme. We have taken our shared responsibility, and what we have built together—our highways and hospitals, our schools and laboratories—stand as proof of what humanity can accomplish when it chooses unity over division.</p>
+
+      <p>As I leave this office, I do so with a full heart. The story of this nation and of our world is far from over. But I believe we are still capable of greatness when we remember the lessons of yesterday. I have complete faith and trust that the President-elect will continue to lean into progress and generosity. He is a good man and he very obviously loves this country, and I couldn't be prouder to hand the baton over to him. He has a very large responsibility on his shoulders, a burden he must carry as uncertainty looms over our world.</p>
+
+      <p>As we all learned many months ago, humanity is not alone in this universe and, later today, we will finally meet those who have watched us from afar. Their message was clear: they come not as conquerors, but as friends. And while their arrival will raise questions we cannot yet answer, I ask you all to meet this moment not with fear, but with the same courage and openness that has defined the best of our species.</p>
+
+      <p>This is, undeniably, the greatest threshold our civilization has ever approached. For centuries, we looked up at the stars and wondered if we were alone. Today, we know we are not. And in just a few short hours, the President-elect will have the solemn honor of greeting not just a new world, but a new universe of possibility.</p>
+
+      <p>My final request to you, as your president, is simple: stay united and hold tight to our shared humanity. The world these visitors arrive to should be one of peace, cooperation, and wisdom—not just for their sake, but for ours. What we choose to show them—how we welcome them—may well define our species for generations to come. Whatever comes next, we will face it together.</p>
+
+      <p>May God bless you all, and may God bless the United States of America.</p>
+
+      <p><strong>— President Alvin Turner</strong></p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025–2033 The Dominion Review. All content is fictional and for storytelling purposes only.</p>
+  </footer>
+</body>
+</html>
