@@ -648,3 +648,8 @@ body.chapter-page p:first-of-type::first-letter {
         color: #000;           /* Black text for print */
     }
 }
+body.chapter-page p::first-letter {
+    font-size: inherit;
+    font-weight: inherit;
+    float: none;
+}
