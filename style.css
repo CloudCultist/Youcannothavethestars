@@ -508,7 +508,7 @@ nav strong.active {
 }
 /* Book formatting styles - only for chapter pages */
 body.chapter-page .container {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
     max-width: 6in;
     text-align: justify;
