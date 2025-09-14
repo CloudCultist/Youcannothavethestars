@@ -506,3 +506,66 @@ nav strong.active {
   -webkit-column-break-before: always;
   -moz-column-break-before: always;
 }
+/* Book formatting styles - only for chapter pages */
+body.chapter-page {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    max-width: 6in;
+    margin: 1in auto;
+    padding: 0;
+    color: #000;
+    font-size: 12pt;
+    text-align: justify;
+    hyphens: auto;
+}
+
+body.chapter-page .chapter-header {
+    text-align: center;
+    margin-bottom: 3em;
+    page-break-before: always;
+}
+
+body.chapter-page .chapter-number {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+body.chapter-page .chapter-date {
+    font-size: 14pt;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+body.chapter-page p {
+    margin: 0;
+    text-indent: 1.5em;
+    margin-bottom: 0;
+}
+
+body.chapter-page p:first-of-type,
+body.chapter-page .scene-break + p {
+    text-indent: 0;
+}
+
+body.chapter-page .scene-break {
+    text-align: center;
+    margin: 2em 0;
+    font-size: 14pt;
+    letter-spacing: 2em;
+}
+
+body.chapter-page .dialogue {
+    text-indent: 1.5em;
+}
+
+@media print {
+    body.chapter-page {
+        margin: 1in;
+        font-size: 11pt;
+    }
+    body.chapter-page .chapter-header {
+        page-break-before: always;
+    }
+}
