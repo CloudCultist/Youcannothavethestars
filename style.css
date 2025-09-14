@@ -507,28 +507,28 @@ nav strong.active {
   -moz-column-break-before: always;
 }
 /* Book formatting styles - only for chapter pages */
-body.chapter-page {
+body.chapter-page .container {
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.5;
     max-width: 6in;
-    margin: 1in auto;
-    padding: 0;
-    color: #000;
-    font-size: 12pt;
     text-align: justify;
     hyphens: auto;
+}
+
+body.chapter-page .container main {
+    font-size: 12pt;
 }
 
 body.chapter-page .chapter-header {
     text-align: center;
     margin-bottom: 3em;
-    page-break-before: always;
 }
 
 body.chapter-page .chapter-number {
     font-size: 24pt;
     font-weight: bold;
     margin-bottom: 0.5em;
+    color: #fff;
 }
 
 body.chapter-page .chapter-date {
@@ -536,12 +536,14 @@ body.chapter-page .chapter-date {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 2em;
+    color: #fff;
 }
 
 body.chapter-page p {
     margin: 0;
     text-indent: 1.5em;
     margin-bottom: 0;
+    color: #fff;
 }
 
 body.chapter-page p:first-of-type,
@@ -554,30 +556,17 @@ body.chapter-page .scene-break {
     margin: 2em 0;
     font-size: 14pt;
     letter-spacing: 2em;
-}
-
-body.chapter-page .dialogue {
-    text-indent: 1.5em;
+    color: #fff;
 }
 
 @media print {
-    body.chapter-page {
+    body.chapter-page .container {
         margin: 1in;
         font-size: 11pt;
     }
-    body.chapter-page .chapter-header {
-        page-break-before: always;
+    body.chapter-page p,
+    body.chapter-page .chapter-number,
+    body.chapter-page .chapter-date {
+        color: #000;
     }
-}
-body.chapter-page {
-    background: #fff;         /* White background for book pages */
-    color: #000;               /* Black text on white */
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.5;
-    max-width: 6in;
-    margin: 1in auto;
-    padding: 0;
-    font-size: 12pt;
-    text-align: justify;
-    hyphens: auto;
 }
