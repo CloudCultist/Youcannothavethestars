@@ -627,15 +627,6 @@ body.chapter-page .scene-break {
     color: #fff;
 }
 
-/* Optional: subtle emphasis for first sentence of a chapter */
-body.chapter-page p:first-of-type::first-letter {
-    font-size: 1.5em;
-    font-weight: bold;
-    float: left;
-    margin-right: 0.1em;
-    line-height: 1;
-}
-
 /* Print-specific styles */
 @media print {
     body.chapter-page .container {
