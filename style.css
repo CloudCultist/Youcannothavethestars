@@ -644,3 +644,24 @@ body.chapter-page p::first-letter {
     font-weight: inherit;
     float: none;
 }
+.spoiler {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.spoiler::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white; /* change to black if you want blackout instead of whiteout */
+  transition: opacity 0.3s ease;
+}
+
+.spoiler.revealed::before {
+  opacity: 0;
+  pointer-events: none;
+}
