@@ -19,6 +19,7 @@
       <a href="shortstories.html">Short Stories</a>
       <a href="multiverse.html">Eddie Liu's <em>Echoes in the Multiverse</em> Series</a>
     </nav>
+<div id="sidebar-container"></div>
 
     <main>
       <header>
@@ -48,5 +49,12 @@
       <p>&copy; 2025 You Cannot Have the Stars. All content is fictional and for storytelling purposes only.</p>
     </footer>
   </div>
+  <script>
+fetch('sidebar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('sidebar-container').innerHTML = data;
+  });
+</script>
 </body>
 </html>
