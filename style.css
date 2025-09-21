@@ -665,3 +665,44 @@ body.chapter-page p::first-letter {
   opacity: 0;
   pointer-events: none;
 }
+/* Subscription Form Styling */
+form {
+    max-width: 400px;       /* keeps the form a readable width */
+    margin: 20px auto;      /* centers it below the call-to-action */
+    padding: 20px;
+    background-color: #111; /* dark background, matches your site */
+    color: #fff;            /* white text */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-family: 'Times New Roman', serif; /* matches your site font */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #444; /* dark gray button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #666; /* lighter gray on hover */
+}
