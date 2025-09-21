@@ -783,3 +783,16 @@ form {
   margin-top: 30px;
   text-align: center; /* center form elements */
 }
+.content-wrapper {
+  display: flex;
+  gap: 20px; /* space between sidebar and main */
+}
+
+#sidebar-container {
+  width: 250px; /* fixed width for sidebar */
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1; /* take remaining space */
+}
