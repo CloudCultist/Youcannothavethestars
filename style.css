@@ -706,3 +706,20 @@ form button {
 form button:hover {
     background-color: #666; /* lighter gray on hover */
 }
+form {
+  display: flex;
+  flex-direction: column; /* stacks label, input, and button */
+  align-items: center;    /* centers horizontally */
+  margin: 20px auto;      /* adds space above/below and centers the form block */
+}
+
+form input,
+form button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 250px; /* adjust as needed */
+}
+
+form button {
+  cursor: pointer;
+}
