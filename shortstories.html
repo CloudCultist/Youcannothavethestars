@@ -46,5 +46,13 @@
       <p>&copy; 2025 You Cannot Have the Stars. All content is fictional and for storytelling purposes only.</p>
     </footer>
   </div>
+  <script>
+  document.querySelectorAll('.spoiler').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.add('revealed');
+    });
+  });
+</script>
+
 </body>
 </html>
