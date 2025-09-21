@@ -737,3 +737,27 @@ form button {
 body {
   margin-left: 270px;     /* give space for the sidebar so main content doesn't overlap */
 }
+/* Only adjust main if sidebar exists */
+#sidebar-container + main {
+  float: right;          /* move main content next to sidebar */
+  width: calc(100% - 270px); /* subtract sidebar width + margin */
+}
+
+/* Sidebar styling */
+#sidebar-container {
+  float: left;
+  width: 250px;
+  margin-right: 20px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Reset for small screens */
+@media (max-width: 768px) {
+  #sidebar-container, #sidebar-container + main {
+    float: none;
+    width: 100%;
+  }
+}
